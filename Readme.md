@@ -10,6 +10,6 @@ En esta página están presentes los tutoriales y guías prácticas de Google Co
 
 |   | Teoría | Práctica | Solucionario |
 | - | --- | ---- | ---- |
-| Modelos Estadísticos | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/Esta/blob/main/EstadisticaYPsicologiaMatematica/RepasodeEstadistica/ModelosEstadisticos.ipynb)|
-| Estadística Descriptiva e Inferencial | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/Esta/blob/main/EstadisticaYPsicologiaMatematica/RepasodeEstadistica/EstadisticaDescriptivaInferencial.ipynb)|
+| Modelos Estadísticos | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/RepasodeEstadistica/ModelosEstadisticos.ipynb)|
+| Estadística Descriptiva e Inferencial | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/RepasodeEstadistica/EstadisticaDescriptivaInferencial.ipynb)|
 
