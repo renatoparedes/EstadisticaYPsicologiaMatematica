@@ -6,6 +6,8 @@ En esta página están presentes los tutoriales y guías prácticas de Google Co
 
 ## Materiales del curso 
 
+El curso está basado en el lenguaje de programación Python. Si nunca has programado en Python, puedes acceder a un tutorial introductorio en este [enlace](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/IntroaPython.ipynb)
+
 ### Repaso de Estadística
 
 |   | Teoría | Práctica | Solucionario |
