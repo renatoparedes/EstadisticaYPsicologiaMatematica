@@ -8,7 +8,7 @@ En esta página están presentes los tutoriales y guías prácticas de Google Co
 
 El curso está basado en el lenguaje de programación Python. Si nunca has programado en Python, puedes acceder a un tutorial introductorio a través de este [enlace](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/IntroaPython.ipynb).
 
-### Repaso de Estadística
+### Repaso de estadística
 
 |   | Teoría | Práctica | Solucionario |
 | - | --- | ---- | ---- |
@@ -16,3 +16,9 @@ El curso está basado en el lenguaje de programación Python. Si nunca has progr
 | Estadística descriptiva e inferencial | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/RepasodeEstadistica/EstadisticaDescriptivaInferencial.ipynb)| [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/RepasodeEstadistica/Practica_EstadisticaDescriptivaInferencial.ipynb) | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/RepasodeEstadistica/Solucionario_EstadisticaDescriptivaInferencial.ipynb) 
 | Intervalos de confianza y tamaño del efecto | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/RepasodeEstadistica/IntervalosdeConfianza.ipynb)| [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/RepasodeEstadistica/Practica_IntervalosdeConfianza.ipynb) | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/RepasodeEstadistica/Solucionario_IntervalosdeConfianza.ipynb)
 
+### Análisis de datos multivariantes
+
+|   | Teoría | Práctica | Solucionario |
+| - | --- | ---- | ---- |
+| Preprocesamiento de datos | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AnalisisDeDatosMultivariantes/PreprocesamientoDeDatos.ipynb)|[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AnalisisDeDatosMultivariantes/Practica_PreprocesamientoDeDatos.ipynb) |  
+| Verificación de supuestos | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AnalisisDeDatosMultivariantes/VerificacionDeSupuestos.ipynb)| [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AnalisisDeDatosMultivariantes/Practica_VerificacionDeSupuestos.ipynb) | 
