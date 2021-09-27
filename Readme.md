@@ -22,3 +22,10 @@ El curso está basado en el lenguaje de programación Python. Si nunca has progr
 | - | --- | ---- | ---- |
 | Preprocesamiento de datos | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AnalisisDeDatosMultivariantes/PreprocesamientoDeDatos.ipynb)|[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AnalisisDeDatosMultivariantes/Practica_PreprocesamientoDeDatos.ipynb) |  
 | Verificación de supuestos | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AnalisisDeDatosMultivariantes/VerificacionDeSupuestos.ipynb)| [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AnalisisDeDatosMultivariantes/Practica_VerificacionDeSupuestos.ipynb) | 
+
+### Análisis Factorial Exploratorio
+
+|   | Teoría | Práctica | Solucionario |
+| - | --- | ---- | ---- |
+| Nociones previas | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AFE/NocionesPrevias.ipynb)|[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AFE/Practica_NocionesPrevias.ipynb) |  
+| Analisis Factorial Exploratorio | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AFE/AnalisisFactorialExploratorio.ipynb)| [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AFE/Practica_AnalisisFactorialExploratorio.ipynb) | 
