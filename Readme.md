@@ -30,7 +30,7 @@ El curso está basado en el lenguaje de programación Python. Si nunca has progr
 | Nociones previas | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AFE/NocionesPrevias.ipynb)|[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AFE/Practica_NocionesPrevias.ipynb) | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AFE/Solucionario_NocionesPrevias.ipynb) |  
 | Analisis Factorial Exploratorio | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AFE/AnalisisFactorialExploratorio.ipynb)| [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AFE/Practica_AnalisisFactorialExploratorio.ipynb) | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/AFE/Solucionario_AnalisisFactorialExploratorio.ipynb) | 
 
-## Regresiones
+### Regresiones
 
 
 |   | Teoría | Práctica | Solucionario |
@@ -39,7 +39,7 @@ El curso está basado en el lenguaje de programación Python. Si nunca has progr
 | Regresión Logística y MANOVA | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/Regresiones/MANOVA.ipynb)| [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/Regresiones/Practica_MANOVA.ipynb) | [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renatoparedes/EstadisticaYPsicologiaMatematica/blob/main/Regresiones/Solucionario_MANOVA.ipynb) |
 
 
-## SEM
+### SEM
 
 |   | Teoría | Práctica | Solucionario |
 | - | --- | ---- | ---- |
