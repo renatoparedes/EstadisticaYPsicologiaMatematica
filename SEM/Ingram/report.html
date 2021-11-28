@@ -64,10 +64,6 @@ nav .nav-link.active {
 		<div class="col-sm-9" style="background-color: #f6f8fa;max-width: 100%;width: 100%;border: 1px solid">
 		<pre style="font-family: monospace">
 
-# Measurement
-e1 =~ Intent
-e2 =~ Behavior
-
 # Structual
 Intent ∼ Attitude + SubNorm + PBC 
 Behavior ∼ PBC
@@ -90,7 +86,7 @@ Attitude ∼∼ SubNorm
 	    </h2>
 	    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion1">
 	      <div class="accordion-body">
-		<div class="row"><div class="col-sm-2">all</div><div class="col-sm-6">e1, Attitude, Intent, Behavior, e2, SubNorm, PBC</div></div><div class="row"><div class="col-sm-2">endogenous</div><div class="col-sm-6">Behavior, Intent</div></div><div class="row"><div class="col-sm-2">exogenous</div><div class="col-sm-6">e1, Attitude, e2, PBC, SubNorm</div></div><div class="row"><div class="col-sm-2">observed</div><div class="col-sm-6">Behavior, Attitude, Intent, PBC, SubNorm</div></div><div class="row"><div class="col-sm-2">latent</div><div class="col-sm-6">e1, e2</div></div><div class="row"><div class="col-sm-2">indicator</div><div class="col-sm-6">Behavior, Intent</div></div><div class="row"><div class="col-sm-2">output</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">_output</div><div class="col-sm-6">Behavior</div></div><div class="row"><div class="col-sm-2">inner</div><div class="col-sm-6">e1, e2, Attitude, Intent, PBC, SubNorm</div></div>
+		<div class="row"><div class="col-sm-2">all</div><div class="col-sm-6">Attitude, Intent, Behavior, PBC, SubNorm</div></div><div class="row"><div class="col-sm-2">endogenous</div><div class="col-sm-6">Intent, Behavior</div></div><div class="row"><div class="col-sm-2">exogenous</div><div class="col-sm-6">PBC, SubNorm, Attitude</div></div><div class="row"><div class="col-sm-2">observed</div><div class="col-sm-6">Behavior, Attitude, Intent, PBC, SubNorm</div></div><div class="row"><div class="col-sm-2">latent</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">indicator</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">output</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">_output</div><div class="col-sm-6">Behavior</div></div><div class="row"><div class="col-sm-2">inner</div><div class="col-sm-6">Attitude, Intent, PBC, SubNorm</div></div>
 	      </div>
 	    </div>
 	  </div>
@@ -120,7 +116,7 @@ Attitude ∼∼ SubNorm
 	<a class="anchor" id="estimates"></a>
 	<h3>Estimates</h3>
 	<div style="font-family:monospace">
-	<div class="row"><div class='col-sm-2'></div><div class='col-sm-2'></div><div class='col-sm-1'>Estimate</div><div class='col-sm-1'>P-value</div></div><div class='col-sm-2'>Measurement:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>e2 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Behavior</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class='col-sm-2'>Regressions:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>Intent ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e1</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Attitude</div><div class='col-sm-1'>0.443</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>SubNorm</div><div class='col-sm-1'>0.032</div><div class='col-sm-1'>0.287</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>PBC</div><div class='col-sm-1'>-0.064</div><div class='col-sm-1'>0.262</div></div><div class="row"><div class='col-sm-2 text-end'>Behavior ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>PBC</div><div class='col-sm-1'>0.648</div><div class='col-sm-1'>0.023</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Intent</div><div class='col-sm-1'>1.892</div><div class='col-sm-1'>0.010</div></div><div class='col-sm-2'>Variances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Intent</div><div class='col-sm-1'>0.967</div><div class='col-sm-1'>1.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e1</div><div class='col-sm-1'>4.814</div><div class='col-sm-1'>1.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e2</div><div class='col-sm-1'>22.347</div><div class='col-sm-1'>1.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Behavior</div><div class='col-sm-1'>158.819</div><div class='col-sm-1'>1.000</div></div><div class="row"><div class='col-sm-2'>Covariances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'>SubNorm ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>PBC</div><div class='col-sm-1'>46.660</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>Attitude ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>PBC</div><div class='col-sm-1'>34.696</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>SubNorm</div><div class='col-sm-1'>39.758</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>e1 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e2</div><div class='col-sm-1'>-4.239</div><div class='col-sm-1'>0.478</div></div>
+	<div class="row"><div class='col-sm-2'></div><div class='col-sm-2'></div><div class='col-sm-1'>Estimate</div><div class='col-sm-1'>P-value</div></div><div class='col-sm-2'>Regressions:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>Intent ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Attitude</div><div class='col-sm-1'>0.444</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>SubNorm</div><div class='col-sm-1'>0.029</div><div class='col-sm-1'>0.328</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>PBC</div><div class='col-sm-1'>-0.064</div><div class='col-sm-1'>0.269</div></div><div class="row"><div class='col-sm-2 text-end'>Behavior ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>PBC</div><div class='col-sm-1'>0.734</div><div class='col-sm-1'>0.004</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Intent</div><div class='col-sm-1'>1.519</div><div class='col-sm-1'>0.003</div></div><div class='col-sm-2'>Variances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Intent</div><div class='col-sm-1'>5.780</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Behavior</div><div class='col-sm-1'>179.577</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2'>Covariances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'>SubNorm ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>PBC</div><div class='col-sm-1'>46.660</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>Attitude ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>PBC</div><div class='col-sm-1'>34.696</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>SubNorm</div><div class='col-sm-1'>39.758</div><div class='col-sm-1'>0.000</div></div>
 	</div>
 	<br>
 	<div class="accordion" id="accordion3">
@@ -132,22 +128,17 @@ Attitude ∼∼ SubNorm
 	    </h2>	
 	    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion3">
 	      <div class="accordion-body" style="background-color: #f6f8fa;max-width: 100%;width: 100%">
-		<pre style="font-family: monospace">        lval  op      rval    Estimate           Std. Err    z-value   p-value
-0     Intent   ~        e1    1.000000                  -          -         -
-1     Intent   ~  Attitude    0.442539           0.061552    7.18966       0.0
-2     Intent   ~   SubNorm    0.031789           0.029862   1.064513  0.287097
-3     Intent   ~       PBC   -0.064452           0.057445  -1.121986  0.261868
-4   Behavior   ~        e2    1.000000                  -          -         -
-5   Behavior   ~       PBC    0.647969           0.284982   2.273717  0.022983
-6   Behavior   ~    Intent    1.892330           0.732051    2.58497  0.009739
-7    SubNorm  ~~       PBC   46.660417           7.877157    5.92351       0.0
-8   Attitude  ~~       PBC   34.695833           3.122169  11.112735       0.0
-9   Attitude  ~~   SubNorm   39.758139           7.564002    5.25623       0.0
-10    Intent  ~~    Intent    0.966562    94906265.624252        0.0       1.0
-11        e1  ~~        e1    4.814066    94906265.624252        0.0       1.0
-12        e1  ~~        e2   -4.238639           5.971689  -0.709789  0.477835
-13        e2  ~~        e2   22.347271  3037000499.976049        0.0       1.0
-14  Behavior  ~~  Behavior  158.818799  3037000499.976049        0.0       1.0</pre>
+		<pre style="font-family: monospace">       lval  op      rval    Estimate   Std. Err    z-value       p-value
+0    Intent   ~  Attitude    0.444199   0.061611   7.209728  5.606626e-13
+1    Intent   ~   SubNorm    0.029482   0.030115   0.978975  3.275926e-01
+2    Intent   ~       PBC   -0.063566   0.057461  -1.106238  2.686236e-01
+3  Behavior   ~       PBC    0.734449   0.257400   2.853336  4.326280e-03
+4  Behavior   ~    Intent    1.519290   0.512038   2.967141  3.005830e-03
+5   SubNorm  ~~       PBC   46.660417   7.877157   5.923510  3.151418e-09
+6  Attitude  ~~       PBC   34.695833   3.122169  11.112735  0.000000e+00
+7  Attitude  ~~   SubNorm   39.758139   7.564002   5.256230  1.470381e-07
+8    Intent  ~~    Intent    5.779991   1.055277   5.477226  4.320463e-08
+9  Behavior  ~~  Behavior  179.577017  32.786128   5.477226  4.320463e-08</pre>
 	      </div>
 	    </div>
 	  </div>
@@ -166,16 +157,16 @@ Attitude ∼∼ SubNorm
 Optimization method: SLSQP
 Optimization successful.
 Optimization terminated successfully
-Objective value: 0.006
-Number of iterations: 36
-Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 -4.239 22.347</pre>
+Objective value: 0.014
+Number of iterations: 28
+Params: 0.444 0.029 -0.064 0.734 1.519 46.660 34.696 39.758 5.780 179.577</pre>
 	      </div>
 	    </div>
 	  </div>
 	</div>
 	<a class="anchor" id="indices"></a>
 	<h3>Fit indices</h3>
-	<table class="table"><thead><tr><th scope='col'>DoF</th><th scope='col'>DoF Baseline</th><th scope='col'>chi2</th><th scope='col'>chi2 p-value</th><th scope='col'>chi2 Baseline</th></tr></thead><tbody><tr><td>2.000</td><td>13.000</td><td>0.350</td><td>0.839</td><td>136.416</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>CFI</th><th scope='col'>GFI</th><th scope='col'>AGFI</th><th scope='col'>NFI</th><th scope='col'>TLI</th></tr></thead><tbody><tr><td>1.013</td><td>0.997</td><td>0.983</td><td>0.997</td><td>1.087</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>RMSEA</th><th scope='col'>AIC</th><th scope='col'>BIC</th><th scope='col'>LogLik</th></tr></thead><tbody><tr><td>0.000</td><td>25.988</td><td>53.215</td><td>0.006</td></tr></tbody></table>
+	<table class="table"><thead><tr><th scope='col'>DoF</th><th scope='col'>DoF Baseline</th><th scope='col'>chi2</th><th scope='col'>chi2 p-value</th><th scope='col'>chi2 Baseline</th></tr></thead><tbody><tr><td>5.000</td><td>13.000</td><td>0.862</td><td>0.973</td><td>136.416</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>CFI</th><th scope='col'>GFI</th><th scope='col'>AGFI</th><th scope='col'>NFI</th><th scope='col'>TLI</th></tr></thead><tbody><tr><td>1.034</td><td>0.994</td><td>0.984</td><td>0.994</td><td>1.087</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>RMSEA</th><th scope='col'>AIC</th><th scope='col'>BIC</th><th scope='col'>LogLik</th></tr></thead><tbody><tr><td>0.000</td><td>19.971</td><td>40.915</td><td>0.014</td></tr></tbody></table>
 	<a class="anchor" id="matrices"></a>
 	<h3>Matrices</h3>
  	<center><h4>Covariance matrix</h4></center>
@@ -251,30 +242,30 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     <tr>
       <th>Behavior</th>
       <td>273.10</td>
-      <td>60.52</td>
-      <td>31.61</td>
-      <td>61.93</td>
-      <td>66.82</td>
+      <td>56.05</td>
+      <td>31.60</td>
+      <td>61.96</td>
+      <td>63.28</td>
     </tr>
     <tr>
       <th>Attitude</th>
-      <td>60.52</td>
+      <td>56.05</td>
       <td>47.62</td>
-      <td>20.10</td>
+      <td>20.12</td>
       <td>34.70</td>
       <td>39.76</td>
     </tr>
     <tr>
       <th>Intent</th>
-      <td>31.61</td>
-      <td>20.10</td>
+      <td>31.60</td>
+      <td>20.12</td>
       <td>14.44</td>
       <td>13.15</td>
-      <td>19.33</td>
+      <td>19.09</td>
     </tr>
     <tr>
       <th>PBC</th>
-      <td>61.93</td>
+      <td>61.96</td>
       <td>34.70</td>
       <td>13.15</td>
       <td>57.15</td>
@@ -282,9 +273,9 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     </tr>
     <tr>
       <th>SubNorm</th>
-      <td>66.82</td>
+      <td>63.28</td>
       <td>39.76</td>
-      <td>19.33</td>
+      <td>19.09</td>
       <td>46.66</td>
       <td>149.24</td>
     </tr>
@@ -307,8 +298,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>e1</th>
-      <th>e2</th>
       <th>Attitude</th>
       <th>Intent</th>
       <th>PBC</th>
@@ -317,27 +306,7 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   </thead>
   <tbody>
     <tr>
-      <th>e1</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e2</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
       <th>Attitude</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -345,8 +314,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     </tr>
     <tr>
       <th>Intent</th>
-      <td>1.00</td>
-      <td>0.00</td>
       <td>0.44</td>
       <td>0.00</td>
       <td>-0.06</td>
@@ -358,13 +325,9 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <th>SubNorm</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -375,8 +338,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>e1</th>
-      <th>e2</th>
       <th>Attitude</th>
       <th>Intent</th>
       <th>PBC</th>
@@ -385,27 +346,7 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   </thead>
   <tbody>
     <tr>
-      <th>e1</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e2</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
       <th>Attitude</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -413,8 +354,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     </tr>
     <tr>
       <th>Intent</th>
-      <td>1.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -426,13 +365,9 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <th>SubNorm</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -443,8 +378,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>e1</th>
-      <th>e2</th>
       <th>Attitude</th>
       <th>Intent</th>
       <th>PBC</th>
@@ -453,27 +386,7 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   </thead>
   <tbody>
     <tr>
-      <th>e1</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e2</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
       <th>Attitude</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -484,9 +397,7 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
       <td>_b1</td>
       <td>0.00</td>
       <td>_b3</td>
-      <td>0.00</td>
-      <td>_b5</td>
-      <td>_b4</td>
+      <td>_b2</td>
     </tr>
     <tr>
       <th>PBC</th>
@@ -494,13 +405,9 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <th>SubNorm</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -517,8 +424,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>e1</th>
-      <th>e2</th>
       <th>Attitude</th>
       <th>Intent</th>
       <th>PBC</th>
@@ -529,16 +434,12 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     <tr>
       <th>Behavior</th>
       <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>1.89</td>
-      <td>0.65</td>
+      <td>1.52</td>
+      <td>0.73</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>Attitude</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>1.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -546,8 +447,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     </tr>
     <tr>
       <th>Intent</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
       <td>0.00</td>
@@ -557,15 +456,11 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
       <th>PBC</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>1.00</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>SubNorm</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -576,8 +471,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>e1</th>
-      <th>e2</th>
       <th>Attitude</th>
       <th>Intent</th>
       <th>PBC</th>
@@ -588,16 +481,12 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     <tr>
       <th>Behavior</th>
       <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>Attitude</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>1.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -605,8 +494,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     </tr>
     <tr>
       <th>Intent</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
       <td>0.00</td>
@@ -616,15 +503,11 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
       <th>PBC</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>1.00</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>SubNorm</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -635,8 +518,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>e1</th>
-      <th>e2</th>
       <th>Attitude</th>
       <th>Intent</th>
       <th>PBC</th>
@@ -647,16 +528,12 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     <tr>
       <th>Behavior</th>
       <td>0.00</td>
-      <td>_b2</td>
-      <td>0.00</td>
-      <td>_b7</td>
-      <td>_b6</td>
+      <td>_b5</td>
+      <td>_b4</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>Attitude</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>1.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -664,8 +541,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     </tr>
     <tr>
       <th>Intent</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
       <td>0.00</td>
@@ -675,15 +550,11 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
       <th>PBC</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>1.00</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>SubNorm</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -700,8 +571,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>e1</th>
-      <th>e2</th>
       <th>Attitude</th>
       <th>Intent</th>
       <th>PBC</th>
@@ -710,27 +579,7 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   </thead>
   <tbody>
     <tr>
-      <th>e1</th>
-      <td>4.81</td>
-      <td>-4.24</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e2</th>
-      <td>-4.24</td>
-      <td>22.35</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
       <th>Attitude</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>47.62</td>
       <td>0.00</td>
       <td>34.70</td>
@@ -739,16 +588,12 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     <tr>
       <th>Intent</th>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.97</td>
+      <td>5.78</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>PBC</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>34.70</td>
       <td>0.00</td>
       <td>57.15</td>
@@ -756,8 +601,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     </tr>
     <tr>
       <th>SubNorm</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>39.76</td>
       <td>0.00</td>
       <td>46.66</td>
@@ -768,8 +611,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>e1</th>
-      <th>e2</th>
       <th>Attitude</th>
       <th>Intent</th>
       <th>PBC</th>
@@ -778,27 +619,7 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   </thead>
   <tbody>
     <tr>
-      <th>e1</th>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e2</th>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
       <th>Attitude</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>47.62</td>
       <td>0.00</td>
       <td>34.70</td>
@@ -807,16 +628,12 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     <tr>
       <th>Intent</th>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>7.22</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>PBC</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>34.70</td>
       <td>0.00</td>
       <td>57.15</td>
@@ -824,8 +641,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     </tr>
     <tr>
       <th>SubNorm</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>39.76</td>
       <td>0.00</td>
       <td>46.66</td>
@@ -836,8 +651,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>e1</th>
-      <th>e2</th>
       <th>Attitude</th>
       <th>Intent</th>
       <th>PBC</th>
@@ -846,27 +659,7 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   </thead>
   <tbody>
     <tr>
-      <th>e1</th>
-      <td>_c9</td>
-      <td>_c10</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e2</th>
-      <td>_c10</td>
-      <td>_c11</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
       <th>Attitude</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>_c5</td>
       <td>0.00</td>
       <td>_c3</td>
@@ -875,16 +668,12 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     <tr>
       <th>Intent</th>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_c8</td>
+      <td>_c7</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>PBC</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>_c3</td>
       <td>0.00</td>
       <td>_c6</td>
@@ -892,8 +681,6 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
     </tr>
     <tr>
       <th>SubNorm</th>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>_c4</td>
       <td>0.00</td>
       <td>_c1</td>
@@ -920,7 +707,7 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   <tbody>
     <tr>
       <th>Behavior</th>
-      <td>158.82</td>
+      <td>179.58</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -1026,7 +813,7 @@ Params: 0.443 0.032 -0.064 0.648 1.892 46.660 34.696 39.758 158.819 0.967 4.814 
   <tbody>
     <tr>
       <th>Behavior</th>
-      <td>_c7</td>
+      <td>_c8</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>

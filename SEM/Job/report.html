@@ -51,7 +51,7 @@ nav .nav-link.active {
 		<div class="col-sm-4">Model class:</div><div class="col-sm-2"><span style="background-color: #f6f8fa; font-family: monospace;">Model</span></div>
 		</div>
 		<div class="row">
-		<div class="col-sm-4">Number of samples:</div><div class="col-sm-2">98</div>
+		<div class="col-sm-4">Number of samples:</div><div class="col-sm-2">75</div>
 		</div>
 		<div class="row">
 		<div class="col-sm-4">Objective function:</div><div class="col-sm-2">MLW</div>
@@ -64,30 +64,20 @@ nav .nav-link.active {
 		<div class="col-sm-9" style="background-color: #f6f8fa;max-width: 100%;width: 100%;border: 1px solid">
 		<pre style="font-family: monospace">
 # Measurement
-Work_Environment =~ x5 + x6 + x7 + x8
-Coworkers =~ x9 + x10 + x11 + x12
-Job_Satisfaction =~ x13 + x14 + x15 + x16
-
-DEFINE(ordinal) x5
-
-e5 =~ x5
-e6 =~ x6
-e7 =~ x7
-e8 =~ x8
-e9 =~ x9
-e10 =~ x10
-e11 =~ x11
-e12 =~ x12
-e13 =~ x13
-e14 =~ x14
-e15 =~ x15
-e16 =~ x16
+ind60 =~ x1 + x2 + x3
+dem60 =~ y1 + y2 + y3 + y4
+dem65 =~ y5 + y6 + y7 + y8
 
 # Structure
-Job_Satisfaction ~ Coworkers + Work_Environment 
+dem60 ~ ind60
+dem65 ~ ind60 + dem60
 
 # Covariances
-Coworkers ~~ Work_Environment 
+y1 ~~ y5
+y2 ~~ y4 + y6
+y3 ~~ y7
+y4 ~~ y8
+y6 ~~ y8
 
 </pre>
 		</div>
@@ -101,7 +91,7 @@ Coworkers ~~ Work_Environment
 	    </h2>
 	    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion1">
 	      <div class="accordion-body">
-		<div class="row"><div class="col-sm-2">all</div><div class="col-sm-6">e14, x12, Coworkers, e7, x11, Job_Satisfaction, e11, e13, x7, e9, x10, x15, e16, e8, x6, e10, x9, Work_Environment, e15, e5, x13, x14, e6, e12, x8, x16, x5</div></div><div class="row"><div class="col-sm-2">endogenous</div><div class="col-sm-6">x12, x11, x13, Job_Satisfaction, x10, x7, x15, x14, x8, x16, x6, x5, x9</div></div><div class="row"><div class="col-sm-2">exogenous</div><div class="col-sm-6">e14, Work_Environment, Coworkers, e7, e15, e5, e11, e13, e6, e9, e16, e12, e8, e10</div></div><div class="row"><div class="col-sm-2">observed</div><div class="col-sm-6">x10, x11, x12, x13, x14, x15, x16, x5, x6, x7, x8, x9</div></div><div class="row"><div class="col-sm-2">latent</div><div class="col-sm-6">e14, Work_Environment, Coworkers, e7, e15, e5, Job_Satisfaction, e11, e13, e6, e9, e16, e12, e8, e10</div></div><div class="row"><div class="col-sm-2">indicator</div><div class="col-sm-6">x12, x11, x13, x7, x10, x14, x15, x8, x16, x6, x5, x9</div></div><div class="row"><div class="col-sm-2">output</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">_output</div><div class="col-sm-6">x12, x11, x13, x7, x10, x14, x15, x8, x16, x6, x5, x9</div></div><div class="row"><div class="col-sm-2">inner</div><div class="col-sm-6">Coworkers, Job_Satisfaction, Work_Environment, e10, e11, e12, e13, e14, e15, e16, e5, e6, e7, e8, e9</div></div><div class="row"><div class="col-sm-2">ordinal</div><div class="col-sm-6">x5</div></div>
+		<div class="row"><div class="col-sm-2">all</div><div class="col-sm-6">x2, y1, y5, dem65, y3, y8, dem60, y6, ind60, x1, y7, y2, x3, y4</div></div><div class="row"><div class="col-sm-2">endogenous</div><div class="col-sm-6">x2, y4, y1, y5, dem65, y3, x1, y8, x3, y7, y2, dem60, y6</div></div><div class="row"><div class="col-sm-2">exogenous</div><div class="col-sm-6">ind60</div></div><div class="row"><div class="col-sm-2">observed</div><div class="col-sm-6">x1, x2, x3, y1, y2, y3, y4, y5, y6, y7, y8</div></div><div class="row"><div class="col-sm-2">latent</div><div class="col-sm-6">dem65, dem60, ind60</div></div><div class="row"><div class="col-sm-2">indicator</div><div class="col-sm-6">x2, y1, y5, y6, y3, x1, y8, y7, y2, x3, y4</div></div><div class="row"><div class="col-sm-2">output</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">_output</div><div class="col-sm-6">x2, y4, y1, y5, y3, x1, y8, y7, y2, x3, y6</div></div><div class="row"><div class="col-sm-2">inner</div><div class="col-sm-6">dem60, dem65, ind60</div></div>
 	      </div>
 	    </div>
 	  </div>
@@ -131,7 +121,7 @@ Coworkers ~~ Work_Environment
 	<a class="anchor" id="estimates"></a>
 	<h3>Estimates</h3>
 	<div style="font-family:monospace">
-	<div class="row"><div class='col-sm-2'></div><div class='col-sm-2'></div><div class='col-sm-1'>Estimate</div><div class='col-sm-1'>P-value</div></div><div class='col-sm-2'>Measurement:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>Work_Environment =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x5</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x6</div><div class='col-sm-1'>-1.629</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x7</div><div class='col-sm-1'>-0.102</div><div class='col-sm-1'>0.123</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x8</div><div class='col-sm-1'>-1.025</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>e5 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x5</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'>e6 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x6</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'>e7 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x7</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'>e8 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x8</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'>Coworkers =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x9</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x10</div><div class='col-sm-1'>0.902</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x11</div><div class='col-sm-1'>1.221</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x12</div><div class='col-sm-1'>0.346</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>e9 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x9</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'>e10 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x10</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'>e11 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x11</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'>e12 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x12</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'>Job_Satisfaction =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x13</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x14</div><div class='col-sm-1'>-0.568</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x15</div><div class='col-sm-1'>-0.168</div><div class='col-sm-1'>0.002</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x16</div><div class='col-sm-1'>-0.339</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>e13 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x13</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'>e14 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x14</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'>e15 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x15</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'>e16 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x16</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class='col-sm-2'>Regressions:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>Job_Satisfaction ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Coworkers</div><div class='col-sm-1'>-0.385</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Work_Environment</div><div class='col-sm-1'>0.849</div><div class='col-sm-1'>0.000</div></div><div class='col-sm-2'>Variances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Coworkers</div><div class='col-sm-1'>0.320</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Job_Satisfaction</div><div class='col-sm-1'>0.116</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e14</div><div class='col-sm-1'>0.110</div><div class='col-sm-1'>0.022</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Work_Environment</div><div class='col-sm-1'>0.524</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e7</div><div class='col-sm-1'>0.366</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e15</div><div class='col-sm-1'>0.319</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e5</div><div class='col-sm-1'>0.305</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e11</div><div class='col-sm-1'>0.357</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e13</div><div class='col-sm-1'>0.076</div><div class='col-sm-1'>0.029</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e6</div><div class='col-sm-1'>0.117</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e9</div><div class='col-sm-1'>0.473</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e16</div><div class='col-sm-1'>0.243</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>0.322</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>0.148</div><div class='col-sm-1'>0.002</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>0.260</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x12</div><div class='col-sm-1'>0.665</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x11</div><div class='col-sm-1'>0.703</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x13</div><div class='col-sm-1'>0.260</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x10</div><div class='col-sm-1'>0.514</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x7</div><div class='col-sm-1'>0.703</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x15</div><div class='col-sm-1'>0.694</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x14</div><div class='col-sm-1'>0.433</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x8</div><div class='col-sm-1'>0.464</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x16</div><div class='col-sm-1'>0.587</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x6</div><div class='col-sm-1'>0.397</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x5</div><div class='col-sm-1'>0.635</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x9</div><div class='col-sm-1'>0.886</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2'>Covariances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'>Coworkers ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Work_Environment</div><div class='col-sm-1'>-0.250</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e7</div><div class='col-sm-1'>0.155</div><div class='col-sm-1'>0.009</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e15</div><div class='col-sm-1'>-0.044</div><div class='col-sm-1'>0.399</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e5</div><div class='col-sm-1'>-0.067</div><div class='col-sm-1'>0.112</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e11</div><div class='col-sm-1'>-0.220</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e13</div><div class='col-sm-1'>0.031</div><div class='col-sm-1'>0.446</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e6</div><div class='col-sm-1'>-0.045</div><div class='col-sm-1'>0.216</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e9</div><div class='col-sm-1'>-0.340</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e16</div><div class='col-sm-1'>0.395</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>-0.036</div><div class='col-sm-1'>0.473</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>-0.179</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>-0.019</div><div class='col-sm-1'>0.669</div></div><div class="row"><div class='col-sm-2 text-end'>e14 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Work_Environment</div><div class='col-sm-1'>-0.159</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>Coworkers</div><div class='col-sm-1'>0.178</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e7</div><div class='col-sm-1'>0.131</div><div class='col-sm-1'>0.105</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e15</div><div class='col-sm-1'>0.001</div><div class='col-sm-1'>0.987</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e5</div><div class='col-sm-1'>0.222</div><div class='col-sm-1'>0.001</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e11</div><div class='col-sm-1'>-0.275</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e13</div><div class='col-sm-1'>0.369</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e6</div><div class='col-sm-1'>-0.551</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e9</div><div class='col-sm-1'>-0.124</div><div class='col-sm-1'>0.028</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e16</div><div class='col-sm-1'>-0.080</div><div class='col-sm-1'>0.284</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>0.081</div><div class='col-sm-1'>0.305</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>0.399</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>-0.168</div><div class='col-sm-1'>0.015</div></div><div class="row"><div class='col-sm-2 text-end'>Work_Environment ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e7</div><div class='col-sm-1'>0.362</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e15</div><div class='col-sm-1'>0.095</div><div class='col-sm-1'>0.015</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e5</div><div class='col-sm-1'>-0.232</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e11</div><div class='col-sm-1'>-0.319</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e13</div><div class='col-sm-1'>-0.010</div><div class='col-sm-1'>0.741</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e6</div><div class='col-sm-1'>0.277</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e9</div><div class='col-sm-1'>0.044</div><div class='col-sm-1'>0.158</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e16</div><div class='col-sm-1'>0.026</div><div class='col-sm-1'>0.471</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>0.171</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>0.079</div><div class='col-sm-1'>0.024</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>0.296</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>e7 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e15</div><div class='col-sm-1'>0.027</div><div class='col-sm-1'>0.773</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e5</div><div class='col-sm-1'>-0.528</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e11</div><div class='col-sm-1'>-0.301</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e13</div><div class='col-sm-1'>0.089</div><div class='col-sm-1'>0.198</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e6</div><div class='col-sm-1'>0.359</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e9</div><div class='col-sm-1'>-0.026</div><div class='col-sm-1'>0.678</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e16</div><div class='col-sm-1'>0.224</div><div class='col-sm-1'>0.013</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>0.767</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>0.315</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>0.311</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>e15 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e5</div><div class='col-sm-1'>0.176</div><div class='col-sm-1'>0.023</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e11</div><div class='col-sm-1'>-0.004</div><div class='col-sm-1'>0.944</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e13</div><div class='col-sm-1'>0.011</div><div class='col-sm-1'>0.879</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e6</div><div class='col-sm-1'>0.100</div><div class='col-sm-1'>0.128</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e9</div><div class='col-sm-1'>0.077</div><div class='col-sm-1'>0.229</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e16</div><div class='col-sm-1'>0.045</div><div class='col-sm-1'>0.625</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>0.046</div><div class='col-sm-1'>0.616</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>-0.037</div><div class='col-sm-1'>0.661</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>0.109</div><div class='col-sm-1'>0.180</div></div><div class="row"><div class='col-sm-2 text-end'>e5 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e11</div><div class='col-sm-1'>0.098</div><div class='col-sm-1'>0.038</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e13</div><div class='col-sm-1'>0.177</div><div class='col-sm-1'>0.001</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e6</div><div class='col-sm-1'>-0.315</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e9</div><div class='col-sm-1'>0.011</div><div class='col-sm-1'>0.817</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e16</div><div class='col-sm-1'>-0.097</div><div class='col-sm-1'>0.157</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>-0.378</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>0.104</div><div class='col-sm-1'>0.119</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>-0.074</div><div class='col-sm-1'>0.224</div></div><div class="row"><div class='col-sm-2 text-end'>e11 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e13</div><div class='col-sm-1'>0.027</div><div class='col-sm-1'>0.547</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e6</div><div class='col-sm-1'>-0.462</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e9</div><div class='col-sm-1'>0.811</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e16</div><div class='col-sm-1'>-0.258</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>-0.081</div><div class='col-sm-1'>0.251</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>-0.224</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>-0.145</div><div class='col-sm-1'>0.035</div></div><div class="row"><div class='col-sm-2 text-end'>e13 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e6</div><div class='col-sm-1'>0.252</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e9</div><div class='col-sm-1'>-0.015</div><div class='col-sm-1'>0.769</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e16</div><div class='col-sm-1'>0.245</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>0.199</div><div class='col-sm-1'>0.009</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>0.147</div><div class='col-sm-1'>0.017</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>0.140</div><div class='col-sm-1'>0.022</div></div><div class="row"><div class='col-sm-2 text-end'>e6 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e9</div><div class='col-sm-1'>-0.169</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e16</div><div class='col-sm-1'>-0.065</div><div class='col-sm-1'>0.275</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>0.016</div><div class='col-sm-1'>0.792</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>-0.382</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>0.112</div><div class='col-sm-1'>0.023</div></div><div class="row"><div class='col-sm-2 text-end'>e9 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e16</div><div class='col-sm-1'>0.303</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>0.271</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>0.056</div><div class='col-sm-1'>0.285</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>0.247</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>e16 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e12</div><div class='col-sm-1'>0.075</div><div class='col-sm-1'>0.323</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>-0.044</div><div class='col-sm-1'>0.581</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>-0.177</div><div class='col-sm-1'>0.010</div></div><div class="row"><div class='col-sm-2 text-end'>e12 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e8</div><div class='col-sm-1'>0.172</div><div class='col-sm-1'>0.021</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>0.481</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>e8 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>e10</div><div class='col-sm-1'>0.181</div><div class='col-sm-1'>0.005</div></div>
+	<div class="row"><div class='col-sm-2'></div><div class='col-sm-2'></div><div class='col-sm-1'>Estimate</div><div class='col-sm-1'>P-value</div></div><div class='col-sm-2'>Measurement:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>ind60 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x1</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x2</div><div class='col-sm-1'>2.180</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x3</div><div class='col-sm-1'>1.819</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>dem60 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y1</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y2</div><div class='col-sm-1'>1.257</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y3</div><div class='col-sm-1'>1.058</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y4</div><div class='col-sm-1'>1.265</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>dem65 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y5</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y6</div><div class='col-sm-1'>1.186</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y7</div><div class='col-sm-1'>1.280</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y8</div><div class='col-sm-1'>1.266</div><div class='col-sm-1'>0.000</div></div><div class='col-sm-2'>Regressions:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>dem60 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>ind60</div><div class='col-sm-1'>1.482</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>dem65 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>ind60</div><div class='col-sm-1'>0.572</div><div class='col-sm-1'>0.010</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>dem60</div><div class='col-sm-1'>0.838</div><div class='col-sm-1'>0.000</div></div><div class='col-sm-2'>Variances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>dem65</div><div class='col-sm-1'>0.172</div><div class='col-sm-1'>0.423</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>dem60</div><div class='col-sm-1'>3.951</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>ind60</div><div class='col-sm-1'>0.448</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y1</div><div class='col-sm-1'>1.893</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y2</div><div class='col-sm-1'>7.385</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y3</div><div class='col-sm-1'>5.067</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y4</div><div class='col-sm-1'>3.148</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y6</div><div class='col-sm-1'>4.954</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x2</div><div class='col-sm-1'>0.120</div><div class='col-sm-1'>0.086</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y5</div><div class='col-sm-1'>2.352</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x1</div><div class='col-sm-1'>0.082</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y8</div><div class='col-sm-1'>3.256</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x3</div><div class='col-sm-1'>0.467</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y7</div><div class='col-sm-1'>3.430</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2'>Covariances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'>y1 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y5</div><div class='col-sm-1'>0.624</div><div class='col-sm-1'>0.081</div></div><div class="row"><div class='col-sm-2 text-end'>y2 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y4</div><div class='col-sm-1'>1.320</div><div class='col-sm-1'>0.060</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y6</div><div class='col-sm-1'>2.156</div><div class='col-sm-1'>0.003</div></div><div class="row"><div class='col-sm-2 text-end'>y3 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y7</div><div class='col-sm-1'>0.793</div><div class='col-sm-1'>0.192</div></div><div class="row"><div class='col-sm-2 text-end'>y4 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y8</div><div class='col-sm-1'>0.347</div><div class='col-sm-1'>0.432</div></div><div class="row"><div class='col-sm-2 text-end'>y6 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y8</div><div class='col-sm-1'>1.357</div><div class='col-sm-1'>0.017</div></div>
 	</div>
 	<br>
 	<div class="accordion" id="accordion3">
@@ -143,33 +133,41 @@ Coworkers ~~ Work_Environment
 	    </h2>	
 	    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion3">
 	      <div class="accordion-body" style="background-color: #f6f8fa;max-width: 100%;width: 100%">
-		<pre style="font-family: monospace">                 lval  op              rval  Estimate  Std. Err    z-value  \
-0    Job_Satisfaction   ~         Coworkers -0.384873  0.029772 -12.927371   
-1    Job_Satisfaction   ~  Work_Environment  0.849069  0.047364  17.926501   
-2                  x5   ~  Work_Environment  1.000000         -          -   
-3                  x5   ~                e5  1.000000         -          -   
-4                  x6   ~  Work_Environment -1.628959  0.039062 -41.702004   
-..                ...  ..               ...       ...       ...        ...   
-139                x8  ~~                x8  0.463519  0.048279   9.600877   
-140               x16  ~~               x16  0.587426  0.059669   9.844759   
-141                x6  ~~                x6  0.396678  0.030031  13.208765   
-142                x5  ~~                x5  0.635078  0.037756  16.820687   
-143                x9  ~~                x9  0.885548  0.028379  31.204294   
-
-    p-value  
-0       0.0  
-1       0.0  
-2         -  
-3         -  
-4       0.0  
-..      ...  
-139     0.0  
-140     0.0  
-141     0.0  
-142     0.0  
-143     0.0  
-
-[144 rows x 7 columns]</pre>
+		<pre style="font-family: monospace">     lval  op   rval  Estimate  Std. Err    z-value   p-value
+0   dem60   ~  ind60  1.482379  0.399024   3.715017  0.000203
+1   dem65   ~  ind60  0.571912  0.221383   2.583364  0.009784
+2   dem65   ~  dem60  0.837574  0.098446   8.507992       0.0
+3      x1   ~  ind60  1.000000         -          -         -
+4      x2   ~  ind60  2.180494  0.138565  15.736254       0.0
+5      x3   ~  ind60  1.818546  0.151993   11.96465       0.0
+6      y1   ~  dem60  1.000000         -          -         -
+7      y2   ~  dem60  1.256819  0.182687   6.879647       0.0
+8      y3   ~  dem60  1.058174  0.151521   6.983699       0.0
+9      y4   ~  dem60  1.265186  0.145151   8.716344       0.0
+10     y5   ~  dem65  1.000000         -          -         -
+11     y6   ~  dem65  1.185743  0.168908   7.020032       0.0
+12     y7   ~  dem65  1.279717  0.159996    7.99841       0.0
+13     y8   ~  dem65  1.266084  0.158238   8.001141       0.0
+14  dem65  ~~  dem65  0.172210  0.214861   0.801494  0.422846
+15  dem60  ~~  dem60  3.950849  0.920451   4.292296  0.000018
+16  ind60  ~~  ind60  0.448321  0.086677   5.172345       0.0
+17     y1  ~~     y5  0.624423  0.358435   1.742083  0.081494
+18     y1  ~~     y1  1.892743   0.44456   4.257565  0.000021
+19     y2  ~~     y4  1.319589   0.70268   1.877937   0.06039
+20     y2  ~~     y6  2.156164  0.734155   2.936934  0.003315
+21     y2  ~~     y2  7.385292  1.375671   5.368501       0.0
+22     y3  ~~     y7  0.793329  0.607642   1.305585  0.191694
+23     y3  ~~     y3  5.066628  0.951722   5.323646       0.0
+24     y4  ~~     y8  0.347222  0.442234   0.785154  0.432363
+25     y4  ~~     y4  3.147911  0.738841   4.260605   0.00002
+26     y6  ~~     y8  1.357037    0.5685   2.387047  0.016984
+27     y6  ~~     y6  4.954364  0.914284   5.418843       0.0
+28     x2  ~~     x2  0.119894  0.069747   1.718973  0.085619
+29     y5  ~~     y5  2.351910  0.480369   4.896044  0.000001
+30     x1  ~~     x1  0.081573  0.019495   4.184317  0.000029
+31     y8  ~~     y8  3.256389   0.69504   4.685182  0.000003
+32     x3  ~~     x3  0.466732  0.090168   5.176276       0.0
+33     y7  ~~     y7  3.430032  0.712732   4.812512  0.000001</pre>
 	      </div>
 	    </div>
 	  </div>
@@ -188,16 +186,16 @@ Coworkers ~~ Work_Environment
 Optimization method: SLSQP
 Optimization successful.
 Optimization terminated successfully
-Objective value: 0.000
-Number of iterations: 70
-Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849 -0.250 0.320 0.155 -0.044 -0.067 -0.220 0.031 -0.045 -0.340 0.395 -0.036 -0.179 -0.019 0.665 0.703 0.260 0.116 0.514 0.703 0.694 0.433 0.464 0.587 0.397 0.635 0.886 0.110 -0.159 0.178 0.131 0.001 0.222 -0.275 0.369 -0.551 -0.124 -0.080 0.081 0.399 -0.168 0.524 0.362 0.095 -0.232 -0.319 -0.010 0.277 0.044 0.026 0.171 0.079 0.296 0.366 0.027 -0.528 -0.301 0.089 0.359 -0.026 0.224 0.767 0.315 0.311 0.319 0.176 -0.004 0.011 0.100 0.077 0.045 0.046 -0.037 0.109 0.305 0.098 0.177 -0.315 0.011 -0.097 -0.378 0.104 -0.074 0.357 0.027 -0.462 0.811 -0.258 -0.081 -0.224 -0.145 0.076 0.252 -0.015 0.245 0.199 0.147 0.140 0.117 -0.169 -0.065 0.016 -0.382 0.112 0.473 0.303 0.271 0.056 0.247 0.243 0.075 -0.044 -0.177 0.322 0.172 0.481 0.148 0.181 0.260</pre>
+Objective value: 0.508
+Number of iterations: 52
+Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 1.893 1.320 2.156 7.385 0.793 5.067 0.347 3.148 1.357 4.954 0.120 2.352 0.172 0.082 3.256 0.467 3.430 3.951 0.448</pre>
 	      </div>
 	    </div>
 	  </div>
 	</div>
 	<a class="anchor" id="indices"></a>
 	<h3>Fit indices</h3>
-	<table class="table"><thead><tr><th scope='col'>DoF</th><th scope='col'>DoF Baseline</th><th scope='col'>chi2</th><th scope='col'>chi2 p-value</th><th scope='col'>chi2 Baseline</th></tr></thead><tbody><tr><td>-51.000</td><td>66.000</td><td>0.000</td><td>nan</td><td>642.353</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>CFI</th><th scope='col'>GFI</th><th scope='col'>AGFI</th><th scope='col'>NFI</th><th scope='col'>TLI</th></tr></thead><tbody><tr><td>0.912</td><td>1.000</td><td>1.000</td><td>1.000</td><td>1.115</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>RMSEA</th><th scope='col'>AIC</th><th scope='col'>BIC</th><th scope='col'>LogLik</th></tr></thead><tbody><tr><td>nan</td><td>258.000</td><td>591.461</td><td>0.000</td></tr></tbody></table>
+	<table class="table"><thead><tr><th scope='col'>DoF</th><th scope='col'>DoF Baseline</th><th scope='col'>chi2</th><th scope='col'>chi2 p-value</th><th scope='col'>chi2 Baseline</th></tr></thead><tbody><tr><td>35.000</td><td>55.000</td><td>38.125</td><td>0.329</td><td>730.655</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>CFI</th><th scope='col'>GFI</th><th scope='col'>AGFI</th><th scope='col'>NFI</th><th scope='col'>TLI</th></tr></thead><tbody><tr><td>0.995</td><td>0.948</td><td>0.918</td><td>0.948</td><td>0.993</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>RMSEA</th><th scope='col'>AIC</th><th scope='col'>BIC</th><th scope='col'>LogLik</th></tr></thead><tbody><tr><td>0.035</td><td>60.983</td><td>132.825</td><td>0.508</td></tr></tbody></table>
 	<a class="anchor" id="matrices"></a>
 	<h3>Matrices</h3>
  	<center><h4>Covariance matrix</h4></center>
@@ -209,400 +207,346 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>x10</th>
-      <th>x11</th>
-      <th>x12</th>
-      <th>x13</th>
-      <th>x14</th>
-      <th>x15</th>
-      <th>x16</th>
-      <th>x5</th>
-      <th>x6</th>
-      <th>x7</th>
-      <th>x8</th>
-      <th>x9</th>
+      <th>x1</th>
+      <th>x2</th>
+      <th>x3</th>
+      <th>y1</th>
+      <th>y2</th>
+      <th>y3</th>
+      <th>y4</th>
+      <th>y5</th>
+      <th>y6</th>
+      <th>y7</th>
+      <th>y8</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>x10</th>
-      <td>1.00</td>
-      <td>-0.01</td>
-      <td>0.54</td>
-      <td>0.12</td>
-      <td>0.02</td>
-      <td>0.08</td>
-      <td>0.20</td>
-      <td>-0.06</td>
-      <td>-0.04</td>
-      <td>0.44</td>
-      <td>-0.05</td>
-      <td>0.21</td>
-    </tr>
-    <tr>
-      <th>x11</th>
-      <td>-0.01</td>
-      <td>1.00</td>
-      <td>-0.07</td>
-      <td>-0.53</td>
-      <td>0.28</td>
-      <td>0.04</td>
-      <td>0.43</td>
-      <td>-0.61</td>
-      <td>0.50</td>
-      <td>-0.05</td>
-      <td>0.20</td>
-      <td>0.57</td>
-    </tr>
-    <tr>
-      <th>x12</th>
-      <td>0.54</td>
-      <td>-0.07</td>
-      <td>1.00</td>
-      <td>0.25</td>
-      <td>0.12</td>
-      <td>0.02</td>
-      <td>0.20</td>
-      <td>-0.32</td>
-      <td>-0.14</td>
+      <th>x1</th>
+      <td>0.53</td>
+      <td>0.98</td>
       <td>0.81</td>
-      <td>0.02</td>
-      <td>0.23</td>
+      <td>0.72</td>
+      <td>0.61</td>
+      <td>0.78</td>
+      <td>1.14</td>
+      <td>1.07</td>
+      <td>0.84</td>
+      <td>0.92</td>
+      <td>1.09</td>
     </tr>
     <tr>
-      <th>x13</th>
-      <td>0.12</td>
-      <td>-0.53</td>
-      <td>0.25</td>
-      <td>1.00</td>
-      <td>-0.22</td>
-      <td>-0.01</td>
-      <td>-0.12</td>
-      <td>0.54</td>
-      <td>-0.36</td>
-      <td>0.28</td>
-      <td>-0.26</td>
-      <td>-0.15</td>
+      <th>x2</th>
+      <td>0.98</td>
+      <td>2.25</td>
+      <td>1.78</td>
+      <td>1.26</td>
+      <td>1.47</td>
+      <td>1.53</td>
+      <td>2.21</td>
+      <td>2.04</td>
+      <td>1.78</td>
+      <td>1.97</td>
+      <td>2.20</td>
     </tr>
     <tr>
-      <th>x14</th>
-      <td>0.02</td>
-      <td>0.28</td>
-      <td>0.12</td>
-      <td>-0.22</td>
-      <td>1.00</td>
-      <td>0.05</td>
-      <td>0.20</td>
-      <td>-0.15</td>
-      <td>0.06</td>
-      <td>0.04</td>
-      <td>0.80</td>
-      <td>0.15</td>
-    </tr>
-    <tr>
-      <th>x15</th>
-      <td>0.08</td>
-      <td>0.04</td>
-      <td>0.02</td>
-      <td>-0.01</td>
-      <td>0.05</td>
-      <td>1.00</td>
-      <td>0.07</td>
-      <td>0.21</td>
-      <td>0.05</td>
-      <td>-0.01</td>
-      <td>-0.06</td>
-      <td>0.06</td>
-    </tr>
-    <tr>
-      <th>x16</th>
-      <td>0.20</td>
-      <td>0.43</td>
-      <td>0.20</td>
-      <td>-0.12</td>
-      <td>0.20</td>
-      <td>0.07</td>
-      <td>1.00</td>
-      <td>-0.20</td>
-      <td>0.11</td>
-      <td>0.16</td>
-      <td>0.07</td>
-      <td>0.76</td>
-    </tr>
-    <tr>
-      <th>x5</th>
-      <td>-0.06</td>
-      <td>-0.61</td>
-      <td>-0.32</td>
-      <td>0.54</td>
-      <td>-0.15</td>
-      <td>0.21</td>
-      <td>-0.20</td>
-      <td>1.00</td>
-      <td>-0.51</td>
-      <td>-0.20</td>
-      <td>-0.12</td>
-      <td>-0.26</td>
-    </tr>
-    <tr>
-      <th>x6</th>
-      <td>-0.04</td>
-      <td>0.50</td>
-      <td>-0.14</td>
-      <td>-0.36</td>
-      <td>0.06</td>
-      <td>0.05</td>
-      <td>0.11</td>
-      <td>-0.51</td>
-      <td>1.00</td>
-      <td>-0.17</td>
-      <td>0.08</td>
-      <td>0.12</td>
-    </tr>
-    <tr>
-      <th>x7</th>
-      <td>0.44</td>
-      <td>-0.05</td>
+      <th>x3</th>
       <td>0.81</td>
-      <td>0.28</td>
-      <td>0.04</td>
-      <td>-0.01</td>
-      <td>0.16</td>
-      <td>-0.20</td>
-      <td>-0.17</td>
-      <td>1.00</td>
-      <td>-0.01</td>
-      <td>0.15</td>
+      <td>1.78</td>
+      <td>1.95</td>
+      <td>0.90</td>
+      <td>1.15</td>
+      <td>1.03</td>
+      <td>1.81</td>
+      <td>1.56</td>
+      <td>1.55</td>
+      <td>1.60</td>
+      <td>1.67</td>
     </tr>
     <tr>
-      <th>x8</th>
-      <td>-0.05</td>
-      <td>0.20</td>
-      <td>0.02</td>
-      <td>-0.26</td>
-      <td>0.80</td>
-      <td>-0.06</td>
-      <td>0.07</td>
-      <td>-0.12</td>
-      <td>0.08</td>
-      <td>-0.01</td>
-      <td>1.00</td>
-      <td>0.09</td>
+      <th>y1</th>
+      <td>0.72</td>
+      <td>1.26</td>
+      <td>0.90</td>
+      <td>6.79</td>
+      <td>6.17</td>
+      <td>5.76</td>
+      <td>6.01</td>
+      <td>5.00</td>
+      <td>5.67</td>
+      <td>5.73</td>
+      <td>5.60</td>
     </tr>
     <tr>
-      <th>x9</th>
-      <td>0.21</td>
-      <td>0.57</td>
-      <td>0.23</td>
-      <td>-0.15</td>
-      <td>0.15</td>
-      <td>0.06</td>
-      <td>0.76</td>
-      <td>-0.26</td>
-      <td>0.12</td>
-      <td>0.15</td>
-      <td>0.09</td>
-      <td>1.00</td>
+      <th>y2</th>
+      <td>0.61</td>
+      <td>1.47</td>
+      <td>1.15</td>
+      <td>6.17</td>
+      <td>15.37</td>
+      <td>5.76</td>
+      <td>9.38</td>
+      <td>5.53</td>
+      <td>9.26</td>
+      <td>7.43</td>
+      <td>7.65</td>
+    </tr>
+    <tr>
+      <th>y3</th>
+      <td>0.78</td>
+      <td>1.53</td>
+      <td>1.03</td>
+      <td>5.76</td>
+      <td>5.76</td>
+      <td>10.62</td>
+      <td>6.60</td>
+      <td>4.87</td>
+      <td>4.66</td>
+      <td>6.91</td>
+      <td>5.56</td>
+    </tr>
+    <tr>
+      <th>y4</th>
+      <td>1.14</td>
+      <td>2.21</td>
+      <td>1.81</td>
+      <td>6.01</td>
+      <td>9.38</td>
+      <td>6.60</td>
+      <td>11.07</td>
+      <td>5.63</td>
+      <td>7.34</td>
+      <td>7.39</td>
+      <td>7.91</td>
+    </tr>
+    <tr>
+      <th>y5</th>
+      <td>1.07</td>
+      <td>2.04</td>
+      <td>1.56</td>
+      <td>5.00</td>
+      <td>5.53</td>
+      <td>4.87</td>
+      <td>5.63</td>
+      <td>6.73</td>
+      <td>4.91</td>
+      <td>5.74</td>
+      <td>5.27</td>
+    </tr>
+    <tr>
+      <th>y6</th>
+      <td>0.84</td>
+      <td>1.78</td>
+      <td>1.55</td>
+      <td>5.67</td>
+      <td>9.26</td>
+      <td>4.66</td>
+      <td>7.34</td>
+      <td>4.91</td>
+      <td>11.22</td>
+      <td>6.66</td>
+      <td>8.14</td>
+    </tr>
+    <tr>
+      <th>y7</th>
+      <td>0.92</td>
+      <td>1.97</td>
+      <td>1.60</td>
+      <td>5.73</td>
+      <td>7.43</td>
+      <td>6.91</td>
+      <td>7.39</td>
+      <td>5.74</td>
+      <td>6.66</td>
+      <td>10.66</td>
+      <td>7.49</td>
+    </tr>
+    <tr>
+      <th>y8</th>
+      <td>1.09</td>
+      <td>2.20</td>
+      <td>1.67</td>
+      <td>5.60</td>
+      <td>7.65</td>
+      <td>5.56</td>
+      <td>7.91</td>
+      <td>5.27</td>
+      <td>8.14</td>
+      <td>7.49</td>
+      <td>10.39</td>
     </tr>
   </tbody>
 </table></div><div class="tab-pane fade " id="modelimplied" role="tabpanel" aria-labelledby="modelimplied-tab"><table border="1" class="dataframe table table-bordered">
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>x10</th>
-      <th>x11</th>
-      <th>x12</th>
-      <th>x13</th>
-      <th>x14</th>
-      <th>x15</th>
-      <th>x16</th>
-      <th>x5</th>
-      <th>x6</th>
-      <th>x7</th>
-      <th>x8</th>
-      <th>x9</th>
+      <th>x1</th>
+      <th>x2</th>
+      <th>x3</th>
+      <th>y1</th>
+      <th>y2</th>
+      <th>y3</th>
+      <th>y4</th>
+      <th>y5</th>
+      <th>y6</th>
+      <th>y7</th>
+      <th>y8</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>x10</th>
-      <td>1.00</td>
-      <td>-0.01</td>
-      <td>0.54</td>
-      <td>0.12</td>
-      <td>0.02</td>
-      <td>0.08</td>
-      <td>0.19</td>
-      <td>-0.06</td>
-      <td>-0.04</td>
-      <td>0.44</td>
-      <td>-0.05</td>
-      <td>0.21</td>
-    </tr>
-    <tr>
-      <th>x11</th>
-      <td>-0.01</td>
-      <td>1.00</td>
-      <td>-0.07</td>
-      <td>-0.53</td>
-      <td>0.28</td>
-      <td>0.04</td>
-      <td>0.43</td>
-      <td>-0.61</td>
-      <td>0.50</td>
-      <td>-0.05</td>
-      <td>0.20</td>
-      <td>0.57</td>
-    </tr>
-    <tr>
-      <th>x12</th>
-      <td>0.54</td>
-      <td>-0.07</td>
-      <td>1.00</td>
-      <td>0.25</td>
-      <td>0.12</td>
-      <td>0.02</td>
-      <td>0.20</td>
-      <td>-0.32</td>
-      <td>-0.14</td>
+      <th>x1</th>
+      <td>0.53</td>
+      <td>0.98</td>
+      <td>0.82</td>
+      <td>0.66</td>
+      <td>0.84</td>
+      <td>0.70</td>
+      <td>0.84</td>
       <td>0.81</td>
-      <td>0.02</td>
-      <td>0.23</td>
+      <td>0.96</td>
+      <td>1.04</td>
+      <td>1.03</td>
     </tr>
     <tr>
-      <th>x13</th>
-      <td>0.12</td>
-      <td>-0.53</td>
-      <td>0.25</td>
-      <td>1.00</td>
-      <td>-0.22</td>
-      <td>-0.01</td>
-      <td>-0.12</td>
-      <td>0.54</td>
-      <td>-0.36</td>
-      <td>0.28</td>
-      <td>-0.26</td>
-      <td>-0.15</td>
+      <th>x2</th>
+      <td>0.98</td>
+      <td>2.25</td>
+      <td>1.78</td>
+      <td>1.45</td>
+      <td>1.82</td>
+      <td>1.53</td>
+      <td>1.83</td>
+      <td>1.77</td>
+      <td>2.10</td>
+      <td>2.27</td>
+      <td>2.24</td>
     </tr>
     <tr>
-      <th>x14</th>
-      <td>0.02</td>
-      <td>0.28</td>
-      <td>0.12</td>
-      <td>-0.22</td>
-      <td>1.00</td>
-      <td>0.05</td>
-      <td>0.20</td>
-      <td>-0.15</td>
-      <td>0.06</td>
-      <td>0.04</td>
-      <td>0.80</td>
-      <td>0.15</td>
+      <th>x3</th>
+      <td>0.82</td>
+      <td>1.78</td>
+      <td>1.95</td>
+      <td>1.21</td>
+      <td>1.52</td>
+      <td>1.28</td>
+      <td>1.53</td>
+      <td>1.48</td>
+      <td>1.75</td>
+      <td>1.89</td>
+      <td>1.87</td>
     </tr>
     <tr>
-      <th>x15</th>
-      <td>0.08</td>
-      <td>0.04</td>
-      <td>0.02</td>
-      <td>-0.01</td>
-      <td>0.05</td>
-      <td>1.00</td>
-      <td>0.07</td>
-      <td>0.21</td>
-      <td>0.05</td>
-      <td>-0.01</td>
-      <td>-0.06</td>
-      <td>0.06</td>
+      <th>y1</th>
+      <td>0.66</td>
+      <td>1.45</td>
+      <td>1.21</td>
+      <td>6.83</td>
+      <td>6.20</td>
+      <td>5.22</td>
+      <td>6.24</td>
+      <td>5.14</td>
+      <td>5.35</td>
+      <td>5.78</td>
+      <td>5.72</td>
     </tr>
     <tr>
-      <th>x16</th>
-      <td>0.19</td>
-      <td>0.43</td>
-      <td>0.20</td>
-      <td>-0.12</td>
-      <td>0.20</td>
-      <td>0.07</td>
-      <td>1.00</td>
-      <td>-0.20</td>
-      <td>0.11</td>
-      <td>0.16</td>
-      <td>0.07</td>
-      <td>0.76</td>
+      <th>y2</th>
+      <td>0.84</td>
+      <td>1.82</td>
+      <td>1.52</td>
+      <td>6.20</td>
+      <td>15.18</td>
+      <td>6.56</td>
+      <td>9.17</td>
+      <td>5.67</td>
+      <td>8.88</td>
+      <td>7.26</td>
+      <td>7.18</td>
     </tr>
     <tr>
-      <th>x5</th>
-      <td>-0.06</td>
-      <td>-0.61</td>
-      <td>-0.32</td>
-      <td>0.54</td>
-      <td>-0.15</td>
-      <td>0.21</td>
-      <td>-0.20</td>
-      <td>1.00</td>
-      <td>-0.51</td>
-      <td>-0.20</td>
-      <td>-0.12</td>
-      <td>-0.26</td>
+      <th>y3</th>
+      <td>0.70</td>
+      <td>1.53</td>
+      <td>1.28</td>
+      <td>5.22</td>
+      <td>6.56</td>
+      <td>10.59</td>
+      <td>6.61</td>
+      <td>4.78</td>
+      <td>5.66</td>
+      <td>6.91</td>
+      <td>6.05</td>
     </tr>
     <tr>
-      <th>x6</th>
-      <td>-0.04</td>
-      <td>0.50</td>
-      <td>-0.14</td>
-      <td>-0.36</td>
-      <td>0.06</td>
-      <td>0.05</td>
-      <td>0.11</td>
-      <td>-0.51</td>
-      <td>1.00</td>
-      <td>-0.17</td>
-      <td>0.08</td>
-      <td>0.12</td>
+      <th>y4</th>
+      <td>0.84</td>
+      <td>1.83</td>
+      <td>1.53</td>
+      <td>6.24</td>
+      <td>9.17</td>
+      <td>6.61</td>
+      <td>11.05</td>
+      <td>5.71</td>
+      <td>6.77</td>
+      <td>7.31</td>
+      <td>7.58</td>
     </tr>
     <tr>
-      <th>x7</th>
-      <td>0.44</td>
-      <td>-0.05</td>
+      <th>y5</th>
       <td>0.81</td>
-      <td>0.28</td>
-      <td>0.04</td>
-      <td>-0.01</td>
-      <td>0.16</td>
-      <td>-0.20</td>
-      <td>-0.17</td>
-      <td>1.00</td>
-      <td>-0.01</td>
-      <td>0.15</td>
+      <td>1.77</td>
+      <td>1.48</td>
+      <td>5.14</td>
+      <td>5.67</td>
+      <td>4.78</td>
+      <td>5.71</td>
+      <td>6.77</td>
+      <td>5.24</td>
+      <td>5.65</td>
+      <td>5.59</td>
     </tr>
     <tr>
-      <th>x8</th>
-      <td>-0.05</td>
-      <td>0.20</td>
-      <td>0.02</td>
-      <td>-0.26</td>
-      <td>0.80</td>
-      <td>-0.06</td>
-      <td>0.07</td>
-      <td>-0.12</td>
-      <td>0.08</td>
-      <td>-0.01</td>
-      <td>1.00</td>
-      <td>0.09</td>
+      <th>y6</th>
+      <td>0.96</td>
+      <td>2.10</td>
+      <td>1.75</td>
+      <td>5.35</td>
+      <td>8.88</td>
+      <td>5.66</td>
+      <td>6.77</td>
+      <td>5.24</td>
+      <td>11.17</td>
+      <td>6.70</td>
+      <td>7.99</td>
     </tr>
     <tr>
-      <th>x9</th>
-      <td>0.21</td>
-      <td>0.57</td>
-      <td>0.23</td>
-      <td>-0.15</td>
-      <td>0.15</td>
-      <td>0.06</td>
-      <td>0.76</td>
-      <td>-0.26</td>
-      <td>0.12</td>
-      <td>0.15</td>
-      <td>0.09</td>
-      <td>1.00</td>
+      <th>y7</th>
+      <td>1.04</td>
+      <td>2.27</td>
+      <td>1.89</td>
+      <td>5.78</td>
+      <td>7.26</td>
+      <td>6.91</td>
+      <td>7.31</td>
+      <td>5.65</td>
+      <td>6.70</td>
+      <td>10.67</td>
+      <td>7.16</td>
+    </tr>
+    <tr>
+      <th>y8</th>
+      <td>1.03</td>
+      <td>2.24</td>
+      <td>1.87</td>
+      <td>5.72</td>
+      <td>7.18</td>
+      <td>6.05</td>
+      <td>7.58</td>
+      <td>5.59</td>
+      <td>7.99</td>
+      <td>7.16</td>
+      <td>10.34</td>
     </tr>
   </tbody>
 </table></div></div><br><center><h4>Model matrices</h4></center><ul class="nav nav-tabs" id="modelmatrices" role="tablist"><li class="nav-item" role="presentation">
@@ -623,290 +567,26 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>Coworkers</th>
-      <th>Job_Satisfaction</th>
-      <th>Work_Environment</th>
-      <th>e10</th>
-      <th>e11</th>
-      <th>e12</th>
-      <th>e13</th>
-      <th>e14</th>
-      <th>e15</th>
-      <th>e16</th>
-      <th>e5</th>
-      <th>e6</th>
-      <th>e7</th>
-      <th>e8</th>
-      <th>e9</th>
+      <th>dem60</th>
+      <th>dem65</th>
+      <th>ind60</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Coworkers</th>
+      <th>dem60</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>1.48</td>
     </tr>
     <tr>
-      <th>Job_Satisfaction</th>
-      <td>-0.38</td>
+      <th>dem65</th>
+      <td>0.84</td>
       <td>0.00</td>
-      <td>0.85</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>0.57</td>
     </tr>
     <tr>
-      <th>Work_Environment</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e10</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e11</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e12</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e13</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e14</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e15</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e16</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e5</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e6</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e7</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e8</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e9</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>ind60</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -916,290 +596,26 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>Coworkers</th>
-      <th>Job_Satisfaction</th>
-      <th>Work_Environment</th>
-      <th>e10</th>
-      <th>e11</th>
-      <th>e12</th>
-      <th>e13</th>
-      <th>e14</th>
-      <th>e15</th>
-      <th>e16</th>
-      <th>e5</th>
-      <th>e6</th>
-      <th>e7</th>
-      <th>e8</th>
-      <th>e9</th>
+      <th>dem60</th>
+      <th>dem65</th>
+      <th>ind60</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Coworkers</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>dem60</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>Job_Satisfaction</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>dem65</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>Work_Environment</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e10</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e11</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e12</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e13</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e14</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e15</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e16</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e5</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e6</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e7</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e8</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e9</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>ind60</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -1209,290 +625,26 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>Coworkers</th>
-      <th>Job_Satisfaction</th>
-      <th>Work_Environment</th>
-      <th>e10</th>
-      <th>e11</th>
-      <th>e12</th>
-      <th>e13</th>
-      <th>e14</th>
-      <th>e15</th>
-      <th>e16</th>
-      <th>e5</th>
-      <th>e6</th>
-      <th>e7</th>
-      <th>e8</th>
-      <th>e9</th>
+      <th>dem60</th>
+      <th>dem65</th>
+      <th>ind60</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Coworkers</th>
+      <th>dem60</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>_b12</td>
     </tr>
     <tr>
-      <th>Job_Satisfaction</th>
-      <td>_b25</td>
+      <th>dem65</th>
+      <td>_b14</td>
       <td>0.00</td>
-      <td>_b26</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>_b13</td>
     </tr>
     <tr>
-      <th>Work_Environment</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e10</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e11</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e12</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e13</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e14</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e15</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e16</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e5</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e6</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e7</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e8</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e9</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>ind60</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -1508,717 +660,231 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>Coworkers</th>
-      <th>Job_Satisfaction</th>
-      <th>Work_Environment</th>
-      <th>e10</th>
-      <th>e11</th>
-      <th>e12</th>
-      <th>e13</th>
-      <th>e14</th>
-      <th>e15</th>
-      <th>e16</th>
-      <th>e5</th>
-      <th>e6</th>
-      <th>e7</th>
-      <th>e8</th>
-      <th>e9</th>
+      <th>dem60</th>
+      <th>dem65</th>
+      <th>ind60</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>x10</th>
-      <td>0.90</td>
+      <th>x1</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <th>x11</th>
-      <td>1.22</td>
+      <th>x2</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>2.18</td>
     </tr>
     <tr>
-      <th>x12</th>
-      <td>0.35</td>
+      <th>x3</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>1.82</td>
     </tr>
     <tr>
-      <th>x13</th>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x14</th>
-      <td>0.00</td>
-      <td>-0.57</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x15</th>
-      <td>0.00</td>
-      <td>-0.17</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x16</th>
-      <td>0.00</td>
-      <td>-0.34</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x5</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x6</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>-1.63</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x7</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>-0.10</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>y1</th>
       <td>1.00</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x8</th>
+      <th>y2</th>
+      <td>1.26</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-1.03</td>
+    </tr>
+    <tr>
+      <th>y3</th>
+      <td>1.06</td>
       <td>0.00</td>
       <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y4</th>
+      <td>1.27</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y5</th>
       <td>0.00</td>
       <td>1.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x9</th>
-      <td>1.00</td>
+      <th>y6</th>
       <td>0.00</td>
+      <td>1.19</td>
       <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y7</th>
       <td>0.00</td>
+      <td>1.28</td>
       <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y8</th>
       <td>0.00</td>
+      <td>1.27</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
     </tr>
   </tbody>
 </table></div><div class="tab-pane fade " id="LambdaStart" role="tabpanel" aria-labelledby="LambdaStart-tab"><table border="1" class="dataframe table table-bordered">
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>Coworkers</th>
-      <th>Job_Satisfaction</th>
-      <th>Work_Environment</th>
-      <th>e10</th>
-      <th>e11</th>
-      <th>e12</th>
-      <th>e13</th>
-      <th>e14</th>
-      <th>e15</th>
-      <th>e16</th>
-      <th>e5</th>
-      <th>e6</th>
-      <th>e7</th>
-      <th>e8</th>
-      <th>e9</th>
+      <th>dem60</th>
+      <th>dem65</th>
+      <th>ind60</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>x10</th>
-      <td>0.20</td>
+      <th>x1</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <th>x11</th>
-      <td>0.62</td>
+      <th>x2</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>1.84</td>
     </tr>
     <tr>
-      <th>x12</th>
-      <td>0.21</td>
+      <th>x3</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>1.53</td>
     </tr>
     <tr>
-      <th>x13</th>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x14</th>
-      <td>0.00</td>
-      <td>-0.12</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x15</th>
-      <td>0.00</td>
-      <td>-0.01</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x16</th>
-      <td>0.00</td>
-      <td>-0.07</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x5</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x6</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>-0.91</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x7</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>-0.31</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>y1</th>
       <td>1.00</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x8</th>
+      <th>y2</th>
+      <td>0.91</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>-0.19</td>
+    </tr>
+    <tr>
+      <th>y3</th>
+      <td>0.85</td>
       <td>0.00</td>
       <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y4</th>
+      <td>0.89</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y5</th>
       <td>0.00</td>
       <td>1.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x9</th>
-      <td>1.00</td>
+      <th>y6</th>
       <td>0.00</td>
+      <td>0.73</td>
       <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y7</th>
       <td>0.00</td>
+      <td>0.85</td>
       <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y8</th>
       <td>0.00</td>
+      <td>0.78</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
     </tr>
   </tbody>
 </table></div><div class="tab-pane fade " id="LambdaNames" role="tabpanel" aria-labelledby="LambdaNames-tab"><table border="1" class="dataframe table table-bordered">
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>Coworkers</th>
-      <th>Job_Satisfaction</th>
-      <th>Work_Environment</th>
-      <th>e10</th>
-      <th>e11</th>
-      <th>e12</th>
-      <th>e13</th>
-      <th>e14</th>
-      <th>e15</th>
-      <th>e16</th>
-      <th>e5</th>
-      <th>e6</th>
-      <th>e7</th>
-      <th>e8</th>
-      <th>e9</th>
+      <th>dem60</th>
+      <th>dem65</th>
+      <th>ind60</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>x10</th>
-      <td>_b11</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_b12</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x11</th>
-      <td>_b13</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_b14</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x12</th>
-      <td>_b15</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_b16</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x13</th>
-      <td>0.00</td>
-      <td>_b17</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_b18</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x14</th>
-      <td>0.00</td>
-      <td>_b19</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_b20</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x15</th>
-      <td>0.00</td>
-      <td>_b21</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_b22</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x16</th>
-      <td>0.00</td>
-      <td>_b23</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_b24</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x5</th>
+      <th>x1</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>_b1</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>x2</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>_b2</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <th>x6</th>
+      <th>x3</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>_b3</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y1</th>
       <td>_b4</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x7</th>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>y2</th>
       <td>_b5</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y3</th>
       <td>_b6</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x8</th>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>y4</th>
       <td>_b7</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y5</th>
       <td>0.00</td>
       <td>_b8</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x9</th>
+      <th>y6</th>
+      <td>0.00</td>
       <td>_b9</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y7</th>
       <td>0.00</td>
       <td>_b10</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y8</th>
+      <td>0.00</td>
+      <td>_b11</td>
+      <td>0.00</td>
     </tr>
   </tbody>
 </table></div></div></div><div class="tab-pane fade " id="mxPsi" role="tabpanel" aria-labelledby="mxPsi-tab"><ul class="nav nav-tabs" id="Psisub" role="tablist"><li class="nav-item" role="presentation">
@@ -2231,583 +897,55 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>Coworkers</th>
-      <th>Job_Satisfaction</th>
-      <th>Work_Environment</th>
-      <th>e10</th>
-      <th>e11</th>
-      <th>e12</th>
-      <th>e13</th>
-      <th>e14</th>
-      <th>e15</th>
-      <th>e16</th>
-      <th>e5</th>
-      <th>e6</th>
-      <th>e7</th>
-      <th>e8</th>
-      <th>e9</th>
+      <th>dem60</th>
+      <th>dem65</th>
+      <th>ind60</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Coworkers</th>
-      <td>0.32</td>
-      <td>0.00</td>
-      <td>-0.25</td>
-      <td>-0.02</td>
-      <td>-0.22</td>
-      <td>-0.04</td>
-      <td>0.03</td>
-      <td>0.18</td>
-      <td>-0.04</td>
-      <td>0.40</td>
-      <td>-0.07</td>
-      <td>-0.04</td>
-      <td>0.15</td>
-      <td>-0.18</td>
-      <td>-0.34</td>
-    </tr>
-    <tr>
-      <th>Job_Satisfaction</th>
-      <td>0.00</td>
-      <td>0.12</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>dem60</th>
+      <td>3.95</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>Work_Environment</th>
-      <td>-0.25</td>
-      <td>0.00</td>
-      <td>0.52</td>
-      <td>0.30</td>
-      <td>-0.32</td>
-      <td>0.17</td>
-      <td>-0.01</td>
-      <td>-0.16</td>
-      <td>0.09</td>
-      <td>0.03</td>
-      <td>-0.23</td>
-      <td>0.28</td>
-      <td>0.36</td>
-      <td>0.08</td>
-      <td>0.04</td>
-    </tr>
-    <tr>
-      <th>e10</th>
-      <td>-0.02</td>
-      <td>0.00</td>
-      <td>0.30</td>
-      <td>0.26</td>
-      <td>-0.15</td>
-      <td>0.48</td>
-      <td>0.14</td>
-      <td>-0.17</td>
-      <td>0.11</td>
-      <td>-0.18</td>
-      <td>-0.07</td>
-      <td>0.11</td>
-      <td>0.31</td>
-      <td>0.18</td>
-      <td>0.25</td>
-    </tr>
-    <tr>
-      <th>e11</th>
-      <td>-0.22</td>
-      <td>0.00</td>
-      <td>-0.32</td>
-      <td>-0.15</td>
-      <td>0.36</td>
-      <td>-0.08</td>
-      <td>0.03</td>
-      <td>-0.28</td>
-      <td>-0.00</td>
-      <td>-0.26</td>
-      <td>0.10</td>
-      <td>-0.46</td>
-      <td>-0.30</td>
-      <td>-0.22</td>
-      <td>0.81</td>
-    </tr>
-    <tr>
-      <th>e12</th>
-      <td>-0.04</td>
+      <th>dem65</th>
       <td>0.00</td>
       <td>0.17</td>
-      <td>0.48</td>
-      <td>-0.08</td>
-      <td>0.32</td>
-      <td>0.20</td>
-      <td>0.08</td>
-      <td>0.05</td>
-      <td>0.07</td>
-      <td>-0.38</td>
-      <td>0.02</td>
-      <td>0.77</td>
-      <td>0.17</td>
-      <td>0.27</td>
+      <td>0.00</td>
     </tr>
     <tr>
-      <th>e13</th>
-      <td>0.03</td>
+      <th>ind60</th>
       <td>0.00</td>
-      <td>-0.01</td>
-      <td>0.14</td>
-      <td>0.03</td>
-      <td>0.20</td>
-      <td>0.08</td>
-      <td>0.37</td>
-      <td>0.01</td>
-      <td>0.24</td>
-      <td>0.18</td>
-      <td>0.25</td>
-      <td>0.09</td>
-      <td>0.15</td>
-      <td>-0.01</td>
-    </tr>
-    <tr>
-      <th>e14</th>
-      <td>0.18</td>
       <td>0.00</td>
-      <td>-0.16</td>
-      <td>-0.17</td>
-      <td>-0.28</td>
-      <td>0.08</td>
-      <td>0.37</td>
-      <td>0.11</td>
-      <td>0.00</td>
-      <td>-0.08</td>
-      <td>0.22</td>
-      <td>-0.55</td>
-      <td>0.13</td>
-      <td>0.40</td>
-      <td>-0.12</td>
-    </tr>
-    <tr>
-      <th>e15</th>
-      <td>-0.04</td>
-      <td>0.00</td>
-      <td>0.09</td>
-      <td>0.11</td>
-      <td>-0.00</td>
-      <td>0.05</td>
-      <td>0.01</td>
-      <td>0.00</td>
-      <td>0.32</td>
-      <td>0.05</td>
-      <td>0.18</td>
-      <td>0.10</td>
-      <td>0.03</td>
-      <td>-0.04</td>
-      <td>0.08</td>
-    </tr>
-    <tr>
-      <th>e16</th>
-      <td>0.40</td>
-      <td>0.00</td>
-      <td>0.03</td>
-      <td>-0.18</td>
-      <td>-0.26</td>
-      <td>0.07</td>
-      <td>0.24</td>
-      <td>-0.08</td>
-      <td>0.05</td>
-      <td>0.24</td>
-      <td>-0.10</td>
-      <td>-0.07</td>
-      <td>0.22</td>
-      <td>-0.04</td>
-      <td>0.30</td>
-    </tr>
-    <tr>
-      <th>e5</th>
-      <td>-0.07</td>
-      <td>0.00</td>
-      <td>-0.23</td>
-      <td>-0.07</td>
-      <td>0.10</td>
-      <td>-0.38</td>
-      <td>0.18</td>
-      <td>0.22</td>
-      <td>0.18</td>
-      <td>-0.10</td>
-      <td>0.30</td>
-      <td>-0.32</td>
-      <td>-0.53</td>
-      <td>0.10</td>
-      <td>0.01</td>
-    </tr>
-    <tr>
-      <th>e6</th>
-      <td>-0.04</td>
-      <td>0.00</td>
-      <td>0.28</td>
-      <td>0.11</td>
-      <td>-0.46</td>
-      <td>0.02</td>
-      <td>0.25</td>
-      <td>-0.55</td>
-      <td>0.10</td>
-      <td>-0.07</td>
-      <td>-0.32</td>
-      <td>0.12</td>
-      <td>0.36</td>
-      <td>-0.38</td>
-      <td>-0.17</td>
-    </tr>
-    <tr>
-      <th>e7</th>
-      <td>0.15</td>
-      <td>0.00</td>
-      <td>0.36</td>
-      <td>0.31</td>
-      <td>-0.30</td>
-      <td>0.77</td>
-      <td>0.09</td>
-      <td>0.13</td>
-      <td>0.03</td>
-      <td>0.22</td>
-      <td>-0.53</td>
-      <td>0.36</td>
-      <td>0.37</td>
-      <td>0.32</td>
-      <td>-0.03</td>
-    </tr>
-    <tr>
-      <th>e8</th>
-      <td>-0.18</td>
-      <td>0.00</td>
-      <td>0.08</td>
-      <td>0.18</td>
-      <td>-0.22</td>
-      <td>0.17</td>
-      <td>0.15</td>
-      <td>0.40</td>
-      <td>-0.04</td>
-      <td>-0.04</td>
-      <td>0.10</td>
-      <td>-0.38</td>
-      <td>0.32</td>
-      <td>0.15</td>
-      <td>0.06</td>
-    </tr>
-    <tr>
-      <th>e9</th>
-      <td>-0.34</td>
-      <td>0.00</td>
-      <td>0.04</td>
-      <td>0.25</td>
-      <td>0.81</td>
-      <td>0.27</td>
-      <td>-0.01</td>
-      <td>-0.12</td>
-      <td>0.08</td>
-      <td>0.30</td>
-      <td>0.01</td>
-      <td>-0.17</td>
-      <td>-0.03</td>
-      <td>0.06</td>
-      <td>0.47</td>
+      <td>0.45</td>
     </tr>
   </tbody>
 </table></div><div class="tab-pane fade " id="PsiStart" role="tabpanel" aria-labelledby="PsiStart-tab"><table border="1" class="dataframe table table-bordered">
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>Coworkers</th>
-      <th>Job_Satisfaction</th>
-      <th>Work_Environment</th>
-      <th>e10</th>
-      <th>e11</th>
-      <th>e12</th>
-      <th>e13</th>
-      <th>e14</th>
-      <th>e15</th>
-      <th>e16</th>
-      <th>e5</th>
-      <th>e6</th>
-      <th>e7</th>
-      <th>e8</th>
-      <th>e9</th>
+      <th>dem60</th>
+      <th>dem65</th>
+      <th>ind60</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Coworkers</th>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>Job_Satisfaction</th>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>Work_Environment</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e10</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e11</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e12</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e13</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e14</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e15</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e16</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e5</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e6</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.05</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>e7</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>dem60</th>
       <td>0.05</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>e8</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>dem65</th>
       <td>0.00</td>
       <td>0.05</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>e9</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>ind60</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.05</td>
@@ -2817,293 +955,29 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>Coworkers</th>
-      <th>Job_Satisfaction</th>
-      <th>Work_Environment</th>
-      <th>e10</th>
-      <th>e11</th>
-      <th>e12</th>
-      <th>e13</th>
-      <th>e14</th>
-      <th>e15</th>
-      <th>e16</th>
-      <th>e5</th>
-      <th>e6</th>
-      <th>e7</th>
-      <th>e8</th>
-      <th>e9</th>
+      <th>dem60</th>
+      <th>dem65</th>
+      <th>ind60</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Coworkers</th>
-      <td>_c2</td>
-      <td>0.00</td>
-      <td>_c1</td>
-      <td>_c13</td>
-      <td>_c6</td>
-      <td>_c11</td>
-      <td>_c7</td>
-      <td>_c29</td>
-      <td>_c4</td>
-      <td>_c10</td>
-      <td>_c5</td>
-      <td>_c8</td>
-      <td>_c3</td>
-      <td>_c12</td>
-      <td>_c9</td>
-    </tr>
-    <tr>
-      <th>Job_Satisfaction</th>
-      <td>0.00</td>
-      <td>_c17</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <th>dem60</th>
+      <td>_c19</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>Work_Environment</th>
-      <td>_c1</td>
+      <th>dem65</th>
       <td>0.00</td>
-      <td>_c41</td>
-      <td>_c52</td>
-      <td>_c45</td>
-      <td>_c50</td>
-      <td>_c46</td>
-      <td>_c28</td>
-      <td>_c43</td>
-      <td>_c49</td>
-      <td>_c44</td>
-      <td>_c47</td>
-      <td>_c42</td>
-      <td>_c51</td>
-      <td>_c48</td>
+      <td>_c14</td>
+      <td>0.00</td>
     </tr>
     <tr>
-      <th>e10</th>
-      <td>_c13</td>
+      <th>ind60</th>
       <td>0.00</td>
-      <td>_c52</td>
-      <td>_c118</td>
-      <td>_c90</td>
-      <td>_c115</td>
-      <td>_c97</td>
-      <td>_c40</td>
-      <td>_c73</td>
-      <td>_c112</td>
-      <td>_c82</td>
-      <td>_c103</td>
-      <td>_c63</td>
-      <td>_c117</td>
-      <td>_c108</td>
-    </tr>
-    <tr>
-      <th>e11</th>
-      <td>_c6</td>
       <td>0.00</td>
-      <td>_c45</td>
-      <td>_c90</td>
-      <td>_c83</td>
-      <td>_c88</td>
-      <td>_c84</td>
-      <td>_c33</td>
-      <td>_c66</td>
-      <td>_c87</td>
-      <td>_c75</td>
-      <td>_c85</td>
-      <td>_c56</td>
-      <td>_c89</td>
-      <td>_c86</td>
-    </tr>
-    <tr>
-      <th>e12</th>
-      <td>_c11</td>
-      <td>0.00</td>
-      <td>_c50</td>
-      <td>_c115</td>
-      <td>_c88</td>
-      <td>_c113</td>
-      <td>_c95</td>
-      <td>_c38</td>
-      <td>_c71</td>
-      <td>_c110</td>
-      <td>_c80</td>
-      <td>_c101</td>
-      <td>_c61</td>
-      <td>_c114</td>
-      <td>_c106</td>
-    </tr>
-    <tr>
-      <th>e13</th>
-      <td>_c7</td>
-      <td>0.00</td>
-      <td>_c46</td>
-      <td>_c97</td>
-      <td>_c84</td>
-      <td>_c95</td>
-      <td>_c91</td>
-      <td>_c34</td>
-      <td>_c67</td>
-      <td>_c94</td>
-      <td>_c76</td>
-      <td>_c92</td>
-      <td>_c57</td>
-      <td>_c96</td>
-      <td>_c93</td>
-    </tr>
-    <tr>
-      <th>e14</th>
-      <td>_c29</td>
-      <td>0.00</td>
-      <td>_c28</td>
-      <td>_c40</td>
-      <td>_c33</td>
-      <td>_c38</td>
-      <td>_c34</td>
-      <td>_c27</td>
-      <td>_c31</td>
-      <td>_c37</td>
-      <td>_c32</td>
-      <td>_c35</td>
-      <td>_c30</td>
-      <td>_c39</td>
-      <td>_c36</td>
-    </tr>
-    <tr>
-      <th>e15</th>
-      <td>_c4</td>
-      <td>0.00</td>
-      <td>_c43</td>
-      <td>_c73</td>
-      <td>_c66</td>
-      <td>_c71</td>
-      <td>_c67</td>
-      <td>_c31</td>
-      <td>_c64</td>
-      <td>_c70</td>
-      <td>_c65</td>
-      <td>_c68</td>
-      <td>_c54</td>
-      <td>_c72</td>
-      <td>_c69</td>
-    </tr>
-    <tr>
-      <th>e16</th>
-      <td>_c10</td>
-      <td>0.00</td>
-      <td>_c49</td>
-      <td>_c112</td>
-      <td>_c87</td>
-      <td>_c110</td>
-      <td>_c94</td>
-      <td>_c37</td>
-      <td>_c70</td>
-      <td>_c109</td>
-      <td>_c79</td>
-      <td>_c100</td>
-      <td>_c60</td>
-      <td>_c111</td>
-      <td>_c105</td>
-    </tr>
-    <tr>
-      <th>e5</th>
-      <td>_c5</td>
-      <td>0.00</td>
-      <td>_c44</td>
-      <td>_c82</td>
-      <td>_c75</td>
-      <td>_c80</td>
-      <td>_c76</td>
-      <td>_c32</td>
-      <td>_c65</td>
-      <td>_c79</td>
-      <td>_c74</td>
-      <td>_c77</td>
-      <td>_c55</td>
-      <td>_c81</td>
-      <td>_c78</td>
-    </tr>
-    <tr>
-      <th>e6</th>
-      <td>_c8</td>
-      <td>0.00</td>
-      <td>_c47</td>
-      <td>_c103</td>
-      <td>_c85</td>
-      <td>_c101</td>
-      <td>_c92</td>
-      <td>_c35</td>
-      <td>_c68</td>
-      <td>_c100</td>
-      <td>_c77</td>
-      <td>_c98</td>
-      <td>_c58</td>
-      <td>_c102</td>
-      <td>_c99</td>
-    </tr>
-    <tr>
-      <th>e7</th>
-      <td>_c3</td>
-      <td>0.00</td>
-      <td>_c42</td>
-      <td>_c63</td>
-      <td>_c56</td>
-      <td>_c61</td>
-      <td>_c57</td>
-      <td>_c30</td>
-      <td>_c54</td>
-      <td>_c60</td>
-      <td>_c55</td>
-      <td>_c58</td>
-      <td>_c53</td>
-      <td>_c62</td>
-      <td>_c59</td>
-    </tr>
-    <tr>
-      <th>e8</th>
-      <td>_c12</td>
-      <td>0.00</td>
-      <td>_c51</td>
-      <td>_c117</td>
-      <td>_c89</td>
-      <td>_c114</td>
-      <td>_c96</td>
-      <td>_c39</td>
-      <td>_c72</td>
-      <td>_c111</td>
-      <td>_c81</td>
-      <td>_c102</td>
-      <td>_c62</td>
-      <td>_c116</td>
-      <td>_c107</td>
-    </tr>
-    <tr>
-      <th>e9</th>
-      <td>_c9</td>
-      <td>0.00</td>
-      <td>_c48</td>
-      <td>_c108</td>
-      <td>_c86</td>
-      <td>_c106</td>
-      <td>_c93</td>
-      <td>_c36</td>
-      <td>_c69</td>
-      <td>_c105</td>
-      <td>_c78</td>
-      <td>_c99</td>
-      <td>_c59</td>
-      <td>_c107</td>
-      <td>_c104</td>
+      <td>_c20</td>
     </tr>
   </tbody>
 </table></div></div></div><div class="tab-pane fade " id="mxTheta" role="tabpanel" aria-labelledby="mxTheta-tab"><ul class="nav nav-tabs" id="Thetasub" role="tablist"><li class="nav-item" role="presentation">
@@ -3116,40 +990,23 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>x10</th>
-      <th>x11</th>
-      <th>x12</th>
-      <th>x13</th>
-      <th>x14</th>
-      <th>x15</th>
-      <th>x16</th>
-      <th>x5</th>
-      <th>x6</th>
-      <th>x7</th>
-      <th>x8</th>
-      <th>x9</th>
+      <th>x1</th>
+      <th>x2</th>
+      <th>x3</th>
+      <th>y1</th>
+      <th>y2</th>
+      <th>y3</th>
+      <th>y4</th>
+      <th>y5</th>
+      <th>y6</th>
+      <th>y7</th>
+      <th>y8</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>x10</th>
-      <td>0.51</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x11</th>
-      <td>0.00</td>
-      <td>0.70</td>
+      <th>x1</th>
+      <td>0.08</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3162,10 +1019,9 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x12</th>
+      <th>x2</th>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.66</td>
+      <td>0.12</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3177,10 +1033,152 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x13</th>
+      <th>x3</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.47</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y1</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.89</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.62</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y2</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>7.39</td>
+      <td>0.00</td>
+      <td>1.32</td>
+      <td>0.00</td>
+      <td>2.16</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y3</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>5.07</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.79</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y4</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.32</td>
+      <td>0.00</td>
+      <td>3.15</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <th>y5</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.62</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2.35</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y6</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2.16</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.95</td>
+      <td>0.00</td>
+      <td>1.36</td>
+    </tr>
+    <tr>
+      <th>y7</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.79</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.43</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y8</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.35</td>
+      <td>0.00</td>
+      <td>1.36</td>
+      <td>0.00</td>
+      <td>3.26</td>
+    </tr>
+  </tbody>
+</table></div><div class="tab-pane fade " id="ThetaStart" role="tabpanel" aria-labelledby="ThetaStart-tab"><table border="1" class="dataframe table table-bordered">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>x1</th>
+      <th>x2</th>
+      <th>x3</th>
+      <th>y1</th>
+      <th>y2</th>
+      <th>y3</th>
+      <th>y4</th>
+      <th>y5</th>
+      <th>y6</th>
+      <th>y7</th>
+      <th>y8</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>x1</th>
       <td>0.26</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3190,152 +1188,13 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x14</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.43</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x15</th>
+      <th>x2</th>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.69</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x16</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.59</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x5</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.64</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x6</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.40</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x7</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.70</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x8</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.46</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x9</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.89</td>
-    </tr>
-  </tbody>
-</table></div><div class="tab-pane fade " id="ThetaStart" role="tabpanel" aria-labelledby="ThetaStart-tab"><table border="1" class="dataframe table table-bordered">
-  <thead>
-    <tr style="text-align: center;">
-      <th></th>
-      <th>x10</th>
-      <th>x11</th>
-      <th>x12</th>
-      <th>x13</th>
-      <th>x14</th>
-      <th>x15</th>
-      <th>x16</th>
-      <th>x5</th>
-      <th>x6</th>
-      <th>x7</th>
-      <th>x8</th>
-      <th>x9</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>x10</th>
-      <td>0.50</td>
-      <td>0.00</td>
-      <td>0.00</td>
+      <td>1.13</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3347,26 +1206,10 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x11</th>
-      <td>0.00</td>
-      <td>0.50</td>
+      <th>x3</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x12</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.50</td>
-      <td>0.00</td>
+      <td>0.97</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3377,27 +1220,11 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x13</th>
+      <th>y1</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.50</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x14</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.50</td>
+      <td>3.39</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3407,13 +1234,12 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x15</th>
+      <th>y2</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.50</td>
+      <td>7.69</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3422,14 +1248,13 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x16</th>
+      <th>y3</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.50</td>
+      <td>5.31</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3437,22 +1262,21 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x5</th>
+      <th>y4</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.50</td>
+      <td>5.53</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x6</th>
+      <th>y5</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3460,14 +1284,13 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.50</td>
+      <td>3.37</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x7</th>
+      <th>y6</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3476,13 +1299,12 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.50</td>
+      <td>5.61</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x8</th>
+      <th>y7</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3492,12 +1314,11 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.50</td>
+      <td>5.33</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x9</th>
+      <th>y8</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3508,47 +1329,29 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>0.50</td>
+      <td>5.20</td>
     </tr>
   </tbody>
 </table></div><div class="tab-pane fade " id="ThetaNames" role="tabpanel" aria-labelledby="ThetaNames-tab"><table border="1" class="dataframe table table-bordered">
   <thead>
     <tr style="text-align: center;">
       <th></th>
-      <th>x10</th>
-      <th>x11</th>
-      <th>x12</th>
-      <th>x13</th>
-      <th>x14</th>
-      <th>x15</th>
-      <th>x16</th>
-      <th>x5</th>
-      <th>x6</th>
-      <th>x7</th>
-      <th>x8</th>
-      <th>x9</th>
+      <th>x1</th>
+      <th>x2</th>
+      <th>x3</th>
+      <th>y1</th>
+      <th>y2</th>
+      <th>y3</th>
+      <th>y4</th>
+      <th>y5</th>
+      <th>y6</th>
+      <th>y7</th>
+      <th>y8</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>x10</th>
-      <td>_c18</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x11</th>
-      <td>0.00</td>
+      <th>x1</th>
       <td>_c15</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3562,10 +1365,9 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x12</th>
+      <th>x2</th>
       <td>0.00</td>
-      <td>0.00</td>
-      <td>_c14</td>
+      <td>_c12</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -3577,139 +1379,130 @@ Params: -1.629 -0.102 -1.025 0.902 1.221 0.346 -0.568 -0.168 -0.339 -0.385 0.849
       <td>0.00</td>
     </tr>
     <tr>
-      <th>x13</th>
+      <th>x3</th>
       <td>0.00</td>
       <td>0.00</td>
+      <td>_c17</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y1</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c2</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c1</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y2</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c5</td>
+      <td>0.00</td>
+      <td>_c3</td>
+      <td>0.00</td>
+      <td>_c4</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y3</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c7</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c6</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y4</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c3</td>
+      <td>0.00</td>
+      <td>_c9</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c8</td>
+    </tr>
+    <tr>
+      <th>y5</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c1</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c13</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y6</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c4</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c11</td>
+      <td>0.00</td>
+      <td>_c10</td>
+    </tr>
+    <tr>
+      <th>y7</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c6</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c18</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>y8</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>_c8</td>
+      <td>0.00</td>
+      <td>_c10</td>
       <td>0.00</td>
       <td>_c16</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x14</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_c21</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x15</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_c20</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x16</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_c23</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x5</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_c25</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x6</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_c24</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x7</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_c19</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x8</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_c22</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>x9</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>_c26</td>
     </tr>
   </tbody>
 </table></div></div></div></div>
