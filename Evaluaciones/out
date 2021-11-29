@@ -1,0 +1,14 @@
+digraph G {
+	overlap=scale splines=true
+	edge [fontsize=12]
+	node [fillcolor="#cae6df" shape=circle style=filled]
+	node [shape=box style=""]
+	Edad [label=Edad]
+	Autonomia [label=Autonomia]
+	Habitos [label=Habitos]
+	Maternidad [label=Maternidad]
+	Autonomia -> Habitos [label="0.242\np-val: 0.01"]
+	Autonomia -> Edad [label="0.155\np-val: 0.12"]
+	Maternidad -> Edad [label="0.067\np-val: 0.49"]
+	Habitos -> Edad [label="0.270\np-val: 0.01"]
+}
