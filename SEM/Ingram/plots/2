@@ -1,0 +1,16 @@
+digraph G {
+	overlap=scale splines=true
+	edge [fontsize=12]
+	node [fillcolor="#cae6df" shape=circle style=filled]
+	node [shape=box style=""]
+	Behavior [label=Behavior]
+	Attitude [label=Attitude]
+	Intent [label=Intent]
+	PBC [label=PBC]
+	SubNorm [label=SubNorm]
+	Attitude -> Intent [label="0.454\np-val: 0.00"]
+	SubNorm -> Intent [label="0.027\np-val: 0.37"]
+	PBC -> Intent [label="-0.063\np-val: 0.27"]
+	PBC -> Behavior [label="0.758\np-val: 0.00"]
+	Intent -> Behavior [label="1.556\np-val: 0.00"]
+}
