@@ -72,12 +72,6 @@ dem65 =~ y5 + y6 + y7 + y8
 dem60 ~ ind60
 dem65 ~ ind60 + dem60
 
-# Covariances
-y1 ~~ y5
-y2 ~~ y4 + y6
-y3 ~~ y7
-y4 ~~ y8
-y6 ~~ y8
 
 </pre>
 		</div>
@@ -91,7 +85,7 @@ y6 ~~ y8
 	    </h2>
 	    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion1">
 	      <div class="accordion-body">
-		<div class="row"><div class="col-sm-2">all</div><div class="col-sm-6">y4, x1, dem65, y6, y7, y5, x3, dem60, y8, y2, y3, y1, ind60, x2</div></div><div class="row"><div class="col-sm-2">endogenous</div><div class="col-sm-6">y4, y2, x1, y3, dem65, y6, y7, y1, y5, x2, x3, dem60, y8</div></div><div class="row"><div class="col-sm-2">exogenous</div><div class="col-sm-6">ind60</div></div><div class="row"><div class="col-sm-2">observed</div><div class="col-sm-6">x1, x2, x3, y1, y2, y3, y4, y5, y6, y7, y8</div></div><div class="row"><div class="col-sm-2">latent</div><div class="col-sm-6">dem60, ind60, dem65</div></div><div class="row"><div class="col-sm-2">indicator</div><div class="col-sm-6">y2, y3, x1, y4, y8, y1, y6, y7, y5, x3, x2</div></div><div class="row"><div class="col-sm-2">output</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">_output</div><div class="col-sm-6">y4, y2, x1, y3, y1, y6, y7, y5, x2, x3, y8</div></div><div class="row"><div class="col-sm-2">inner</div><div class="col-sm-6">dem60, dem65, ind60</div></div>
+		<div class="row"><div class="col-sm-2">all</div><div class="col-sm-6">ind60, y2, x1, y4, y8, y6, y3, x2, y7, dem60, x3, y5, dem65, y1</div></div><div class="row"><div class="col-sm-2">endogenous</div><div class="col-sm-6">x2, y1, y7, y2, dem60, x3, x1, y5, y4, y8, dem65, y6, y3</div></div><div class="row"><div class="col-sm-2">exogenous</div><div class="col-sm-6">ind60</div></div><div class="row"><div class="col-sm-2">observed</div><div class="col-sm-6">x1, x2, x3, y1, y2, y3, y4, y5, y6, y7, y8</div></div><div class="row"><div class="col-sm-2">latent</div><div class="col-sm-6">dem65, dem60, ind60</div></div><div class="row"><div class="col-sm-2">indicator</div><div class="col-sm-6">x2, y1, y7, y2, x3, x1, y5, y4, y8, y6, y3</div></div><div class="row"><div class="col-sm-2">output</div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-2">_output</div><div class="col-sm-6">x2, y7, y2, x3, x1, y3, y5, y4, y8, y6, y1</div></div><div class="row"><div class="col-sm-2">inner</div><div class="col-sm-6">dem60, dem65, ind60</div></div>
 	      </div>
 	    </div>
 	  </div>
@@ -121,7 +115,7 @@ y6 ~~ y8
 	<a class="anchor" id="estimates"></a>
 	<h3>Estimates</h3>
 	<div style="font-family:monospace">
-	<div class="row"><div class='col-sm-2'></div><div class='col-sm-2'></div><div class='col-sm-1'>Estimate</div><div class='col-sm-1'>P-value</div></div><div class='col-sm-2'>Measurement:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>ind60 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x1</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x2</div><div class='col-sm-1'>2.180</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x3</div><div class='col-sm-1'>1.819</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>dem60 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y1</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y2</div><div class='col-sm-1'>1.257</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y3</div><div class='col-sm-1'>1.058</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y4</div><div class='col-sm-1'>1.265</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>dem65 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y5</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y6</div><div class='col-sm-1'>1.186</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y7</div><div class='col-sm-1'>1.280</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y8</div><div class='col-sm-1'>1.266</div><div class='col-sm-1'>0.000</div></div><div class='col-sm-2'>Regressions:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>dem60 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>ind60</div><div class='col-sm-1'>1.482</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>dem65 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>ind60</div><div class='col-sm-1'>0.572</div><div class='col-sm-1'>0.010</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>dem60</div><div class='col-sm-1'>0.838</div><div class='col-sm-1'>0.000</div></div><div class='col-sm-2'>Variances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>dem65</div><div class='col-sm-1'>0.172</div><div class='col-sm-1'>0.423</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>dem60</div><div class='col-sm-1'>3.951</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>ind60</div><div class='col-sm-1'>0.448</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y1</div><div class='col-sm-1'>1.893</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y2</div><div class='col-sm-1'>7.385</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y3</div><div class='col-sm-1'>5.067</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y4</div><div class='col-sm-1'>3.148</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y6</div><div class='col-sm-1'>4.954</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x1</div><div class='col-sm-1'>0.082</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y7</div><div class='col-sm-1'>3.430</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y5</div><div class='col-sm-1'>2.352</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x2</div><div class='col-sm-1'>0.120</div><div class='col-sm-1'>0.086</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x3</div><div class='col-sm-1'>0.467</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y8</div><div class='col-sm-1'>3.256</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2'>Covariances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'>y1 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y5</div><div class='col-sm-1'>0.624</div><div class='col-sm-1'>0.081</div></div><div class="row"><div class='col-sm-2 text-end'>y2 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y4</div><div class='col-sm-1'>1.320</div><div class='col-sm-1'>0.060</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y6</div><div class='col-sm-1'>2.156</div><div class='col-sm-1'>0.003</div></div><div class="row"><div class='col-sm-2 text-end'>y3 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y7</div><div class='col-sm-1'>0.793</div><div class='col-sm-1'>0.192</div></div><div class="row"><div class='col-sm-2 text-end'>y4 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y8</div><div class='col-sm-1'>0.347</div><div class='col-sm-1'>0.432</div></div><div class="row"><div class='col-sm-2 text-end'>y6 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y8</div><div class='col-sm-1'>1.357</div><div class='col-sm-1'>0.017</div></div>
+	<div class="row"><div class='col-sm-2'></div><div class='col-sm-2'></div><div class='col-sm-1'>Estimate</div><div class='col-sm-1'>P-value</div></div><div class='col-sm-2'>Measurement:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>ind60 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x1</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x2</div><div class='col-sm-1'>2.182</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x3</div><div class='col-sm-1'>1.819</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>dem60 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y1</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y2</div><div class='col-sm-1'>1.355</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y3</div><div class='col-sm-1'>1.044</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y4</div><div class='col-sm-1'>1.300</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>dem65 =~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y5</div><div class='col-sm-1'>1.000</div><div class='col-sm-1'>-</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y6</div><div class='col-sm-1'>1.259</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y7</div><div class='col-sm-1'>1.283</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y8</div><div class='col-sm-1'>1.310</div><div class='col-sm-1'>0.000</div></div><div class='col-sm-2'>Regressions:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'>dem60 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>ind60</div><div class='col-sm-1'>1.472</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'>dem65 ~</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>ind60</div><div class='col-sm-1'>0.453</div><div class='col-sm-1'>0.039</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>dem60</div><div class='col-sm-1'>0.865</div><div class='col-sm-1'>0.000</div></div><div class='col-sm-2'>Variances:</div><div class='col-sm-2'></div><div class='col-sm-1'></div><div class='col-sm-1'></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>dem60</div><div class='col-sm-1'>3.865</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>dem65</div><div class='col-sm-1'>0.115</div><div class='col-sm-1'>0.566</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>ind60</div><div class='col-sm-1'>0.448</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x2</div><div class='col-sm-1'>0.118</div><div class='col-sm-1'>0.092</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y1</div><div class='col-sm-1'>1.943</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y7</div><div class='col-sm-1'>3.509</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y2</div><div class='col-sm-1'>6.493</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x3</div><div class='col-sm-1'>0.467</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>x1</div><div class='col-sm-1'>0.082</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y5</div><div class='col-sm-1'>2.391</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y4</div><div class='col-sm-1'>2.888</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y8</div><div class='col-sm-1'>2.936</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y6</div><div class='col-sm-1'>4.344</div><div class='col-sm-1'>0.000</div></div><div class="row"><div class='col-sm-2 text-end'></div><div class='col-sm-2'>y3</div><div class='col-sm-1'>5.346</div><div class='col-sm-1'>0.000</div></div>
 	</div>
 	<br>
 	<div class="accordion" id="accordion3">
@@ -134,40 +128,34 @@ y6 ~~ y8
 	    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion3">
 	      <div class="accordion-body" style="background-color: #f6f8fa;max-width: 100%;width: 100%">
 		<pre style="font-family: monospace">     lval  op   rval  Estimate  Std. Err    z-value   p-value
-0   dem60   ~  ind60  1.482379  0.399024   3.715017  0.000203
-1   dem65   ~  ind60  0.571912  0.221383   2.583364  0.009784
-2   dem65   ~  dem60  0.837574  0.098446   8.507992       0.0
+0   dem60   ~  ind60  1.471978  0.391448   3.760338   0.00017
+1   dem65   ~  ind60  0.453036  0.219667   2.062374  0.039172
+2   dem65   ~  dem60  0.864819  0.112851   7.663352       0.0
 3      x1   ~  ind60  1.000000         -          -         -
-4      x2   ~  ind60  2.180494  0.138565  15.736254       0.0
-5      x3   ~  ind60  1.818546  0.151993   11.96465       0.0
+4      x2   ~  ind60  2.181861  0.138883  15.710031       0.0
+5      x3   ~  ind60  1.818795  0.152165  11.952787       0.0
 6      y1   ~  dem60  1.000000         -          -         -
-7      y2   ~  dem60  1.256819  0.182687   6.879647       0.0
-8      y3   ~  dem60  1.058174  0.151521   6.983699       0.0
-9      y4   ~  dem60  1.265186  0.145151   8.716344       0.0
+7      y2   ~  dem60  1.354681  0.174862    7.74712       0.0
+8      y3   ~  dem60  1.044448  0.150214   6.953071       0.0
+9      y4   ~  dem60  1.300215  0.138292    9.40197       0.0
 10     y5   ~  dem65  1.000000         -          -         -
-11     y6   ~  dem65  1.185743  0.168908   7.020032       0.0
-12     y7   ~  dem65  1.279717  0.159996    7.99841       0.0
-13     y8   ~  dem65  1.266084  0.158238   8.001141       0.0
-14  dem65  ~~  dem65  0.172210  0.214861   0.801494  0.422846
-15  dem60  ~~  dem60  3.950849  0.920451   4.292296  0.000018
-16  ind60  ~~  ind60  0.448321  0.086677   5.172345       0.0
-17     y1  ~~     y5  0.624423  0.358435   1.742083  0.081494
-18     y1  ~~     y1  1.892743   0.44456   4.257565  0.000021
-19     y2  ~~     y4  1.319589   0.70268   1.877937   0.06039
-20     y2  ~~     y6  2.156164  0.734155   2.936934  0.003315
-21     y2  ~~     y2  7.385292  1.375671   5.368501       0.0
-22     y3  ~~     y7  0.793329  0.607642   1.305585  0.191694
-23     y3  ~~     y3  5.066628  0.951722   5.323646       0.0
-24     y4  ~~     y8  0.347222  0.442234   0.785154  0.432363
-25     y4  ~~     y4  3.147911  0.738841   4.260605   0.00002
-26     y6  ~~     y8  1.357037    0.5685   2.387047  0.016984
-27     y6  ~~     y6  4.954364  0.914284   5.418843       0.0
-28     x1  ~~     x1  0.081573  0.019495   4.184317  0.000029
-29     y7  ~~     y7  3.430032  0.712732   4.812512  0.000001
-30     y5  ~~     y5  2.351910  0.480369   4.896044  0.000001
-31     x2  ~~     x2  0.119894  0.069747   1.718973  0.085619
-32     x3  ~~     x3  0.466732  0.090168   5.176276       0.0
-33     y8  ~~     y8  3.256389   0.69504   4.685182  0.000003</pre>
+11     y6   ~  dem65  1.258578  0.164598   7.646374       0.0
+12     y7   ~  dem65  1.282589  0.157722    8.13194       0.0
+13     y8   ~  dem65  1.309975   0.15364   8.526281       0.0
+14  dem60  ~~  dem60  3.865095   0.89158   4.335106  0.000015
+15  dem65  ~~  dem65  0.114868   0.19994   0.574511  0.565622
+16  ind60  ~~  ind60  0.448047  0.086684    5.16872       0.0
+17     x2  ~~     x2  0.118338   0.07015   1.686923  0.091618
+18     y1  ~~     y1  1.943263  0.395649    4.91158  0.000001
+19     y7  ~~     y7  3.509328  0.668188   5.252008       0.0
+20     y2  ~~     y2  6.493214  1.185199   5.478587       0.0
+21     x3  ~~     x3  0.467295  0.090319   5.173849       0.0
+22     x1  ~~     x1  0.081868   0.01958   4.181183  0.000029
+23     y5  ~~     y5  2.391498  0.446848   5.351924       0.0
+24     y4  ~~     y4  2.888446  0.610587   4.730605  0.000002
+25     y8  ~~     y8  2.936462  0.585265   5.017321  0.000001
+26     y6  ~~     y6  4.343637  0.796155    5.45577       0.0
+27     y3  ~~     y3  5.345821   0.94409   5.662407       0.0</pre>
 	      </div>
 	    </div>
 	  </div>
@@ -186,16 +174,16 @@ y6 ~~ y8
 Optimization method: SLSQP
 Optimization successful.
 Optimization terminated successfully
-Objective value: 0.508
-Number of iterations: 52
-Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 1.893 1.320 2.156 7.385 0.793 5.067 0.347 3.148 1.357 4.954 0.082 0.172 3.430 2.352 0.120 0.467 3.951 3.256 0.448</pre>
+Objective value: 0.966
+Number of iterations: 42
+Params: 2.182 1.819 1.355 1.044 1.300 1.259 1.283 1.310 1.472 0.453 0.865 0.118 1.943 3.509 6.493 3.865 0.467 0.082 2.391 2.888 2.936 0.115 4.344 5.346 0.448</pre>
 	      </div>
 	    </div>
 	  </div>
 	</div>
 	<a class="anchor" id="indices"></a>
 	<h3>Fit indices</h3>
-	<table class="table"><thead><tr><th scope='col'>DoF</th><th scope='col'>DoF Baseline</th><th scope='col'>chi2</th><th scope='col'>chi2 p-value</th><th scope='col'>chi2 Baseline</th></tr></thead><tbody><tr><td>35.000</td><td>55.000</td><td>38.125</td><td>0.329</td><td>730.655</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>CFI</th><th scope='col'>GFI</th><th scope='col'>AGFI</th><th scope='col'>NFI</th><th scope='col'>TLI</th></tr></thead><tbody><tr><td>0.995</td><td>0.948</td><td>0.918</td><td>0.948</td><td>0.993</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>RMSEA</th><th scope='col'>AIC</th><th scope='col'>BIC</th><th scope='col'>LogLik</th></tr></thead><tbody><tr><td>0.035</td><td>60.983</td><td>132.825</td><td>0.508</td></tr></tbody></table>
+	<table class="table"><thead><tr><th scope='col'>DoF</th><th scope='col'>DoF Baseline</th><th scope='col'>chi2</th><th scope='col'>chi2 p-value</th><th scope='col'>chi2 Baseline</th></tr></thead><tbody><tr><td>41.000</td><td>55.000</td><td>72.462</td><td>0.002</td><td>730.655</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>CFI</th><th scope='col'>GFI</th><th scope='col'>AGFI</th><th scope='col'>NFI</th><th scope='col'>TLI</th></tr></thead><tbody><tr><td>0.953</td><td>0.901</td><td>0.867</td><td>0.901</td><td>0.938</td></tr></tbody></table><table class="table"><thead><tr><th scope='col'>RMSEA</th><th scope='col'>AIC</th><th scope='col'>BIC</th><th scope='col'>LogLik</th></tr></thead><tbody><tr><td>0.102</td><td>48.068</td><td>106.005</td><td>0.966</td></tr></tbody></table>
 	<a class="anchor" id="matrices"></a>
 	<h3>Matrices</h3>
  	<center><h4>Covariance matrix</h4></center>
@@ -398,155 +386,155 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <th>x1</th>
       <td>0.53</td>
       <td>0.98</td>
-      <td>0.82</td>
-      <td>0.66</td>
-      <td>0.84</td>
-      <td>0.70</td>
-      <td>0.84</td>
       <td>0.81</td>
-      <td>0.96</td>
-      <td>1.04</td>
-      <td>1.03</td>
+      <td>0.66</td>
+      <td>0.89</td>
+      <td>0.69</td>
+      <td>0.86</td>
+      <td>0.77</td>
+      <td>0.97</td>
+      <td>0.99</td>
+      <td>1.01</td>
     </tr>
     <tr>
       <th>x2</th>
       <td>0.98</td>
       <td>2.25</td>
       <td>1.78</td>
-      <td>1.45</td>
-      <td>1.82</td>
-      <td>1.53</td>
-      <td>1.83</td>
-      <td>1.77</td>
-      <td>2.10</td>
-      <td>2.27</td>
-      <td>2.24</td>
+      <td>1.44</td>
+      <td>1.95</td>
+      <td>1.50</td>
+      <td>1.87</td>
+      <td>1.69</td>
+      <td>2.12</td>
+      <td>2.16</td>
+      <td>2.21</td>
     </tr>
     <tr>
       <th>x3</th>
-      <td>0.82</td>
+      <td>0.81</td>
       <td>1.78</td>
       <td>1.95</td>
-      <td>1.21</td>
-      <td>1.52</td>
-      <td>1.28</td>
-      <td>1.53</td>
-      <td>1.48</td>
-      <td>1.75</td>
-      <td>1.89</td>
-      <td>1.87</td>
+      <td>1.20</td>
+      <td>1.62</td>
+      <td>1.25</td>
+      <td>1.56</td>
+      <td>1.41</td>
+      <td>1.77</td>
+      <td>1.80</td>
+      <td>1.84</td>
     </tr>
     <tr>
       <th>y1</th>
       <td>0.66</td>
-      <td>1.45</td>
-      <td>1.21</td>
-      <td>6.83</td>
-      <td>6.20</td>
-      <td>5.22</td>
-      <td>6.24</td>
-      <td>5.14</td>
-      <td>5.35</td>
-      <td>5.78</td>
-      <td>5.72</td>
+      <td>1.44</td>
+      <td>1.20</td>
+      <td>6.78</td>
+      <td>6.55</td>
+      <td>5.05</td>
+      <td>6.29</td>
+      <td>4.48</td>
+      <td>5.64</td>
+      <td>5.75</td>
+      <td>5.87</td>
     </tr>
     <tr>
       <th>y2</th>
-      <td>0.84</td>
-      <td>1.82</td>
-      <td>1.52</td>
-      <td>6.20</td>
-      <td>15.18</td>
-      <td>6.56</td>
-      <td>9.17</td>
-      <td>5.67</td>
-      <td>8.88</td>
-      <td>7.26</td>
-      <td>7.18</td>
+      <td>0.89</td>
+      <td>1.95</td>
+      <td>1.62</td>
+      <td>6.55</td>
+      <td>15.37</td>
+      <td>6.84</td>
+      <td>8.52</td>
+      <td>6.07</td>
+      <td>7.64</td>
+      <td>7.79</td>
+      <td>7.95</td>
     </tr>
     <tr>
       <th>y3</th>
-      <td>0.70</td>
-      <td>1.53</td>
-      <td>1.28</td>
-      <td>5.22</td>
-      <td>6.56</td>
-      <td>10.59</td>
-      <td>6.61</td>
-      <td>4.78</td>
-      <td>5.66</td>
-      <td>6.91</td>
-      <td>6.05</td>
+      <td>0.69</td>
+      <td>1.50</td>
+      <td>1.25</td>
+      <td>5.05</td>
+      <td>6.84</td>
+      <td>10.62</td>
+      <td>6.57</td>
+      <td>4.68</td>
+      <td>5.89</td>
+      <td>6.00</td>
+      <td>6.13</td>
     </tr>
     <tr>
       <th>y4</th>
-      <td>0.84</td>
-      <td>1.83</td>
-      <td>1.53</td>
-      <td>6.24</td>
-      <td>9.17</td>
-      <td>6.61</td>
-      <td>11.05</td>
-      <td>5.71</td>
-      <td>6.77</td>
-      <td>7.31</td>
-      <td>7.58</td>
+      <td>0.86</td>
+      <td>1.87</td>
+      <td>1.56</td>
+      <td>6.29</td>
+      <td>8.52</td>
+      <td>6.57</td>
+      <td>11.06</td>
+      <td>5.83</td>
+      <td>7.33</td>
+      <td>7.47</td>
+      <td>7.63</td>
     </tr>
     <tr>
       <th>y5</th>
-      <td>0.81</td>
-      <td>1.77</td>
-      <td>1.48</td>
-      <td>5.14</td>
-      <td>5.67</td>
-      <td>4.78</td>
-      <td>5.71</td>
-      <td>6.77</td>
-      <td>5.24</td>
-      <td>5.65</td>
-      <td>5.59</td>
+      <td>0.77</td>
+      <td>1.69</td>
+      <td>1.41</td>
+      <td>4.48</td>
+      <td>6.07</td>
+      <td>4.68</td>
+      <td>5.83</td>
+      <td>6.73</td>
+      <td>5.46</td>
+      <td>5.57</td>
+      <td>5.69</td>
     </tr>
     <tr>
       <th>y6</th>
-      <td>0.96</td>
-      <td>2.10</td>
-      <td>1.75</td>
-      <td>5.35</td>
-      <td>8.88</td>
-      <td>5.66</td>
-      <td>6.77</td>
-      <td>5.24</td>
-      <td>11.17</td>
-      <td>6.70</td>
-      <td>7.99</td>
+      <td>0.97</td>
+      <td>2.12</td>
+      <td>1.77</td>
+      <td>5.64</td>
+      <td>7.64</td>
+      <td>5.89</td>
+      <td>7.33</td>
+      <td>5.46</td>
+      <td>11.22</td>
+      <td>7.01</td>
+      <td>7.16</td>
     </tr>
     <tr>
       <th>y7</th>
-      <td>1.04</td>
-      <td>2.27</td>
-      <td>1.89</td>
-      <td>5.78</td>
-      <td>7.26</td>
-      <td>6.91</td>
-      <td>7.31</td>
-      <td>5.65</td>
-      <td>6.70</td>
-      <td>10.67</td>
-      <td>7.16</td>
+      <td>0.99</td>
+      <td>2.16</td>
+      <td>1.80</td>
+      <td>5.75</td>
+      <td>7.79</td>
+      <td>6.00</td>
+      <td>7.47</td>
+      <td>5.57</td>
+      <td>7.01</td>
+      <td>10.65</td>
+      <td>7.29</td>
     </tr>
     <tr>
       <th>y8</th>
-      <td>1.03</td>
-      <td>2.24</td>
-      <td>1.87</td>
-      <td>5.72</td>
-      <td>7.18</td>
-      <td>6.05</td>
-      <td>7.58</td>
-      <td>5.59</td>
-      <td>7.99</td>
+      <td>1.01</td>
+      <td>2.21</td>
+      <td>1.84</td>
+      <td>5.87</td>
+      <td>7.95</td>
+      <td>6.13</td>
+      <td>7.63</td>
+      <td>5.69</td>
       <td>7.16</td>
-      <td>10.34</td>
+      <td>7.29</td>
+      <td>10.38</td>
     </tr>
   </tbody>
 </table></div></div><br><center><h4>Model matrices</h4></center><ul class="nav nav-tabs" id="modelmatrices" role="tablist"><li class="nav-item" role="presentation">
@@ -577,13 +565,13 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <th>dem60</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.48</td>
+      <td>1.47</td>
     </tr>
     <tr>
       <th>dem65</th>
-      <td>0.84</td>
+      <td>0.86</td>
       <td>0.00</td>
-      <td>0.57</td>
+      <td>0.45</td>
     </tr>
     <tr>
       <th>ind60</th>
@@ -692,19 +680,19 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
     </tr>
     <tr>
       <th>y2</th>
-      <td>1.26</td>
+      <td>1.35</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>y3</th>
-      <td>1.06</td>
+      <td>1.04</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>y4</th>
-      <td>1.27</td>
+      <td>1.30</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
@@ -717,7 +705,7 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
     <tr>
       <th>y6</th>
       <td>0.00</td>
-      <td>1.19</td>
+      <td>1.26</td>
       <td>0.00</td>
     </tr>
     <tr>
@@ -729,7 +717,7 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
     <tr>
       <th>y8</th>
       <td>0.00</td>
-      <td>1.27</td>
+      <td>1.31</td>
       <td>0.00</td>
     </tr>
   </tbody>
@@ -905,14 +893,14 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
   <tbody>
     <tr>
       <th>dem60</th>
-      <td>3.95</td>
+      <td>3.87</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>dem65</th>
       <td>0.00</td>
-      <td>0.17</td>
+      <td>0.11</td>
       <td>0.00</td>
     </tr>
     <tr>
@@ -963,21 +951,21 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
   <tbody>
     <tr>
       <th>dem60</th>
-      <td>_c18</td>
+      <td>_c5</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>dem65</th>
       <td>0.00</td>
-      <td>_c13</td>
+      <td>_c11</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>ind60</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c20</td>
+      <td>_c14</td>
     </tr>
   </tbody>
 </table></div></div></div><div class="tab-pane fade " id="mxTheta" role="tabpanel" aria-labelledby="mxTheta-tab"><ul class="nav nav-tabs" id="Thetasub" role="tablist"><li class="nav-item" role="presentation">
@@ -1051,11 +1039,11 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.89</td>
+      <td>1.94</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.62</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -1066,11 +1054,11 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>7.39</td>
+      <td>6.49</td>
       <td>0.00</td>
-      <td>1.32</td>
       <td>0.00</td>
-      <td>2.16</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
@@ -1081,11 +1069,11 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>5.07</td>
+      <td>5.35</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.79</td>
+      <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
@@ -1094,24 +1082,24 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>1.32</td>
-      <td>0.00</td>
-      <td>3.15</td>
       <td>0.00</td>
       <td>0.00</td>
+      <td>2.89</td>
       <td>0.00</td>
-      <td>0.35</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>y5</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.62</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>2.35</td>
+      <td>0.00</td>
+      <td>2.39</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -1122,13 +1110,13 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>2.16</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>4.95</td>
       <td>0.00</td>
-      <td>1.36</td>
+      <td>4.34</td>
+      <td>0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>y7</th>
@@ -1137,11 +1125,11 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.79</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>3.43</td>
+      <td>0.00</td>
+      <td>3.51</td>
       <td>0.00</td>
     </tr>
     <tr>
@@ -1152,11 +1140,11 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>0.35</td>
       <td>0.00</td>
-      <td>1.36</td>
       <td>0.00</td>
-      <td>3.26</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2.94</td>
     </tr>
   </tbody>
 </table></div><div class="tab-pane fade " id="ThetaStart" role="tabpanel" aria-labelledby="ThetaStart-tab"><table border="1" class="dataframe table table-bordered">
@@ -1352,7 +1340,7 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
   <tbody>
     <tr>
       <th>x1</th>
-      <td>_c12</td>
+      <td>_c7</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -1367,7 +1355,7 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
     <tr>
       <th>x2</th>
       <td>0.00</td>
-      <td>_c16</td>
+      <td>_c1</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -1382,7 +1370,7 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <th>x3</th>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c17</td>
+      <td>_c6</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -1401,7 +1389,7 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c1</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -1412,11 +1400,11 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c5</td>
-      <td>0.00</td>
-      <td>_c3</td>
-      <td>0.00</td>
       <td>_c4</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
     </tr>
@@ -1427,11 +1415,11 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c7</td>
+      <td>_c13</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c6</td>
+      <td>0.00</td>
       <td>0.00</td>
     </tr>
     <tr>
@@ -1440,24 +1428,24 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c3</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>_c9</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c8</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>y5</th>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c1</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c15</td>
+      <td>0.00</td>
+      <td>_c8</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
@@ -1468,13 +1456,13 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c4</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c11</td>
       <td>0.00</td>
-      <td>_c10</td>
+      <td>_c12</td>
+      <td>0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>y7</th>
@@ -1483,11 +1471,11 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c6</td>
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c14</td>
+      <td>0.00</td>
+      <td>_c3</td>
       <td>0.00</td>
     </tr>
     <tr>
@@ -1498,11 +1486,11 @@ Params: 2.180 1.819 1.257 1.058 1.265 1.186 1.280 1.266 1.482 0.572 0.838 0.624 
       <td>0.00</td>
       <td>0.00</td>
       <td>0.00</td>
-      <td>_c8</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
       <td>0.00</td>
       <td>_c10</td>
-      <td>0.00</td>
-      <td>_c19</td>
     </tr>
   </tbody>
 </table></div></div></div></div>
